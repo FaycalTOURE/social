@@ -1,0 +1,31 @@
+{
+  "name": "social",
+  "description": "Réseau social",
+  "main": "index.html",
+  "authors": [
+    "FAYCAL TOURE"
+  ],
+  "license": "ISC",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.6.6",
+    "angular-bootstrap": "^2.5.0",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1",
+    "angular-ui-router": "^1.0.11",
+    "normalize-css": "normalize.css#^7.0.0",
+    "animate.css": "animate-css#^3.5.2",
+    "font-awesome": "^5.0.6",
+    "angular-animate": "^1.6.9"
+  },
+  "resolutions": {
+    "angular": "1.6.9"
+  }
+}

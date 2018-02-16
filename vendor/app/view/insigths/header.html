@@ -1,0 +1,104 @@
+<!--ng-controller="headerCtrl"-->
+<nav class="head navigation" ng-controller="headerCtrl">
+    <div class="menu">
+        <ul class="pull-left">
+            <li drop-down="menu-options.html">
+            </li>
+            <li class="hidden-xs">
+                <a href="#" class="rs-db" ng-class="ui.icoSize">
+                    <span class="first-title">
+                        Social Linker
+                    </span>
+                </a>
+            </li>
+        </ul>
+        <ul class="pull-right">
+            <li drop-down="notifications.html">
+            </li>
+            <li>
+                <a href="#" class="rs-db" ng-class="ui.icoSize">
+                    <span class="rs-db glyphicon glyphicon-log-out"></span>
+                    <span class="title">Déconnexion</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+ <!--Templates-->
+<script type="text/ng-template" id="menu-options.html">
+    <li>
+        <a href="#" class="rs-db" ng-class="$parent.ui.icoSize">
+            <span class="rs-db glyphicon glyphicon-th"></span>
+            <span class="title">Menu</span>
+        </a>
+        <ul class="list-menu left">
+            <li>
+                <a href="#" class="rs-db" ng-class="$parent.ui.icoSize">
+				<span class="pull-left">
+					<span class="rs-db glyphicon glyphicon-user"></span>
+					<span class="title">Profil</span>
+				</span>
+                    <span class="pull-right"><span>Accéder à votre profil</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="rs-db" ng-class="$parent.ui.icoSize">
+				<span class="pull-left">
+					<span class="rs-db glyphicon glyphicon-envelope"></span>
+					<span class="title">Message</span>
+				</span>
+                    <span class="pull-right"><span>Consulter ou envoyer un message</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="rs-db" ng-class="$parent.ui.icoSize">
+				<span class="pull-left">
+					<span class="rs-db glyphicon glyphicon-comment"></span>
+					<span class="title">Tchat</span>
+				</span>
+                    <span class="pull-right"><span>Démarer une conversation instantanné avec un ami</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="rs-db" ng-class="$parent.ui.icoSize">
+				<span class="pull-left">
+					<span class="rs-db glyphicon glyphicon-pencil"></span>
+					<span class="title">Publication</span>
+				</span>
+                    <span class="pull-right"><span>Faire une nouvelle publication</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="rs-db" ng-class="$parent.ui.icoSize">
+				<span class="pull-left">
+					<span class="rs-db glyphicon glyphicon-star"></span>
+					<span class="title">Fil d'actu</span>
+				</span>
+                    <span class="pull-right"><span>Accéder au fil d'actualité (quoi de neuf ?)</span></span>
+                </a>
+            </li>
+        </ul>
+    </li>
+</script>
+
+<!--Templates-->
+<script type="text/ng-template" id="notifications.html">
+    <li>
+        <a href="#" class="rs-db" ng-class="$parent.ui.icoSize">
+            <span class="rs-db glyphicon glyphicon-bell"></span>
+            <span class="title">Notifications<span class="notify">10</span></span>
+        </a>
+        <ul class="list-menu right">
+            <li>
+                <a href="#" class="rs-db">
+				<span class="pull-left" ng-class="$parent.ui.icoSize">
+					<span class="rs-db glyphicon glyphicon-info-sign"></span>
+					<span class="title">information</span>
+				</span>
+                    <span class="pull-right"><span>vous n'avez aucune notification !</span></span>
+                </a>
+            </li>
+        </ul>
+    </li>
+</script>

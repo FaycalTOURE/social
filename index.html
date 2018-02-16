@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Accueil</title>
+
+        <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+        <link rel="stylesheet" href="bower_components/font-awesome/web-fonts-with-css/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="bower_components/animate.css/animate.css">
+        <link rel="stylesheet" href="public/css/style.css">
+
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+
+
+        <script src="vendor/angular/common/scripts.js"></script>
+        <script src="vendor/angular/common/controllers.js"></script>
+        <script src="vendor/angular/common/directives.js"></script>
+        <script src="vendor/angular/common/services.js"></script>
+
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+        <!--<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>-->
+        <!--<script type="text/javascript" src="public/angular/ui/ui-bootstrap-tpls-2.5.0.js"></script>-->
+        <!--<script src="socket.io/socket.io.js"></script>-->
+    </head>
+
+    <body ng-app="app" ng-controller="mainCtrl">
+        <!--<main ui-view></main> sur balise body mettre : ui-view="layout"-->
+
+        <!--Modal-->
+        <script type="text/ng-template" id="modalBody.html">
+            <div class="modal-header">
+                <span class="{{ modal.glyph }} ini-mr-xs ini-va-m ini-d-ib" ng-show="modal.glyph"></span>
+                <h3 class="modal-title ini-va-m ini-d-ib">
+                    {{ modal.title }}
+                </h3>
+            </div>
+            <div class="modal-body">
+                <div ng-include="modal.template" ng-class="modal.class"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-lg btn-default" type="button" ng-click="ok()">OK</button>
+                <button class="btn-lg btn-danger" type="button" ng-click="cancel()">Cancel</button>
+            </div>
+        </script>
+
+        <!--Pages-->
+        <ng-include src="'vendor/app/view/insigths/header.html'"></ng-include>
+        <ng-include src="'vendor/app/view/main/main.html'"></ng-include>
+        <ng-include src="'vendor/app/view/insigths/footer.html'"></ng-include>
+    </body>
+</html>

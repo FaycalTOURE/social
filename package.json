@@ -1,0 +1,26 @@
+{
+  "name": "social",
+  "version": "1.0.0",
+  "description": "Réseau social",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fayçal Touré",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "browser-sync": "^2.23.6",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.1",
+    "express-session": "^1.15.6",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^2.0.1",
+    "gulp-sass": "^3.1.0",
+    "mongodb": "^2.2.31",
+    "pug": "^2.0.0-rc.4",
+    "socket.io": "^2.0.3",
+    "uuid": "^3.1.0",
+    "v1": "^1.0.0"
+  }
+}
