@@ -1,0 +1,33 @@
+{
+	"user": {
+		"firstName": null,
+		"lastName": null,
+		"address": [
+			{
+				"street": null,
+				"city": null,
+				"zipCode": null,
+				"country": null
+			}
+		],
+		"options" : {
+
+		}
+	},
+	"friends": {
+		"list": [],
+		"messages": [],
+		"recommandations": [],
+		"addingProcess": [],
+		"deleted": []
+	},
+	"messages": {
+		"received": [],
+		"deleted": [],
+		"sended": []
+	},
+	"publications": {
+		"list": []
+	},
+	"status": "disconnected"
+}

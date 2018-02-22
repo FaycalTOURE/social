@@ -22,6 +22,29 @@ app.factory('socket', function ($rootScope, $timeout) {
     };
 });
 
+app.factory('$authentication', function (ipCookie) {
+    var cookieName = "authCookie";
+
+    return {
+        clearAuthKey: function () {
+            return ipCookie.remove(cookieName, {
+                path: "/"
+            });
+        },
+        getAuthKey: function () {
+
+            return !!ipCookie(cookieName);
+
+        },
+        setAuthKey: function (key) {
+
+            ipCookie(cookieName, key, {
+                path: "/"
+            });
+        }
+    }
+});
+
 
 // rootScope.$apply -> $timeout
 

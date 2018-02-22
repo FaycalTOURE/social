@@ -1,0 +1,43 @@
+<footer ng-controller="footerCtrl">
+
+    <div class="menu">
+        <ul class="pull-left">
+            <li>
+                <a href="#" class="rs-db" ng-class="ui.icoSize">
+                    <span class="first-title">
+                        Social Linker
+                    </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" class="rs-db" ng-class="ui.icoSize">
+                    <span class="rs-db glyphicon glyphicon-share-alt"></span>
+                    <span class="title">Partage</span>
+                </a>
+                <ul class="list-menu left">
+                    <li>
+                        <a href="#" class="rs-db" ng-class="ui.icoSize">
+                            <span class="pull-left">
+                                <span class="rs-db glyphicon glyphicon-thumbs-up"></span>
+                                <span class="title">Profil</span>
+                            </span>
+                            <span class="pull-right">
+                                <span>Partager mon profil</span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="pull-right">
+            <li ng-click="open({ template : 'size-options.tpl.html', size : '', title : 'Paramètres', class : 'ini-of'})">
+                <a href="#" class="rs-db" ng-class="ui.icoSize">
+                    <span class="rs-db glyphicon glyphicon-option-vertical"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</footer>

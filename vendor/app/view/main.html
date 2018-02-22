@@ -1,0 +1,64 @@
+<!--ng-controller="headerCtrl"-->
+<nav class="head navigation" ng-controller="headerCtrl">
+    <div class="menu">
+        <ul class="pull-left hidden-xs">
+            <li>
+                <a href="#" class="rs-db" ng-class="ui.icoSize">
+                    <span class="first-title">
+                        Social Linker
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<section class="container align-center">
+    <div class="subscribe-form ini-br-xs">
+        <div class="form-header">
+            <span class="rs-d-ib ini-va-m ini-fz-xl ini-mr-s glyphicon glyphicon-log-in firs-gradiant-color"></span>
+            <h2 class="rs-d-ib ini-va-m firs-gradiant-color">
+                Connexion
+            </h2>
+        </div>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Mot de passe">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Se souvenir
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Connexion</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="subscribe-bottom ini-my-m">
+        <ul>
+            <li class="ini-d-ib ini-mr-s">
+                <a href="#">
+                    Mot de passe oublié
+                </a>
+            </li>
+            <li class="ini-d-ib">
+                <a href="#" class="ini-my-m" ng-click="open({ template : 'subscribtion.tpl.html', size : '', title : 'Inscription'})">
+                    Inscription
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>

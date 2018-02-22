@@ -1,0 +1,178 @@
+<ng-include src="'vendor/app/view/account/insigths/header.html'"></ng-include>
+
+<section class="container">
+
+    <div class="profil-main">
+
+        <div class="profile-header basic-style second-shadow">
+            <div class="gravatar pull-left">
+                <div class="content">
+                    <img class="profile ini-d-ib" src="https://s-media-cache-ak0.pinimg.com/originals/ca/14/3a/ca143acfbafaa5762c839eba433822f1.png" alt="#">
+                    <p class="profile-infos">{{ user.lastName || 'Name' }},
+                        <span>{{ user.firstName || 'Prénom'}}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-body">
+            <aside class="toolbox basic-style col-md-4">
+                <div class="title color-default-a white-color ini-pl-s">
+                    Raccourcis
+                </div>
+                <div class="aside-body">
+                    <div class="card">
+                        <span class="ico blue-gradiant-effect-diagonal">
+                            <span class="glyphicon glyphicon-user"></span>
+                        </span>
+                        <div class="card-body">
+                            <h5 class="card-title">Amis</h5>
+                            <p class="card-text">Ajouter un nouvel ami, gérer mes amis.</p>
+                            <a href="#" class="btn btn-default btn-lg">Commencer</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <span class="ico blue-gradiant-effect-diagonal">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </span>
+                        <div class="card-body">
+                            <h5 class="card-title">Publications</h5>
+                            <p class="card-text">Gérer mes publication.</p>
+                            <a href="#" class="btn btn-default btn-lg">Commencer</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <span class="ico blue-gradiant-effect-diagonal">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                        </span>
+                        <div class="card-body">
+                            <h5 class="card-title">Messages</h5>
+                            <p class="card-text">Accéder à ma messagerie.</p>
+                            <a href="#" class="btn btn-default btn-lg">Commencer</a>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+
+            <aside class="publication basic-style col-md-4">
+                <div class="title color-default-a white-color">
+                    Publications
+                </div>
+                <div class="aside-body">
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNjFhNjRmOTdmZiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE2MWE2NGY5N2ZmIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Media heading</h4>
+                            ...
+                        </div>
+                        <div class="action-container float-right">
+                            <ul class="target-action">
+                                <li>
+                                    <a href="#" class="btn btn-default modify"><span class="glyphicon glyphicon-pencil"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn btn-default share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="publication-date">
+                            FAYCAL TOURE
+                        </div>
+                        <div class="publication-date">
+                            22 Février 2018 - 12 : 22
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNjFhNjRmOTdmZiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE2MWE2NGY5N2ZmIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Media heading</h4>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deserunt ea eaque earum est fugit quae, quibusdam quidem rem sequi!
+                        </div>
+                        <div class="action-container float-right">
+                            <ul class="target-action">
+                                <li>
+                                    <a href="#" class="btn btn-default modify"><span class="glyphicon glyphicon-pencil"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn btn-default share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="publication-date">
+                            FAYCAL TOURE
+                        </div>
+                        <div class="publication-date">
+                            22 Février 2018 - 12 : 22
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <aside class="recommandations basic-style col-md-4 separate-shadow">
+                <div class="title color-default-a white-color">
+                    Recommandations
+                </div>
+                <div class="aside-body">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Suggestion d'article</h4>
+                            <p class="list-group-item-text">
+                                <strong>Fayçal</strong> vous recommande <strong>Antoine</strong>
+                            </p>
+                        </a>
+                        <div class="action-container float-right ini-mb-m">
+                            <ul class="target-action">
+                                <li>
+                                    <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-ok"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-remove"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Suggestion d'ami</h4>
+                            <p class="list-group-item-text">
+                                <strong>Fayçal</strong> vous recommande <strong>un article</strong>
+                            </p>
+                        </a>
+                        <div class="action-container float-right ini-mb-m">
+                            <ul class="target-action">
+                                <ul class="target-action">
+                                    <li>
+                                        <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-ok"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-remove"></span></a>
+                                    </li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+
+    </div>
+</section>
+
+<ng-include src="'vendor/app/view/account/insigths/footer.html'"></ng-include>

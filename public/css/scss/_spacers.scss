@@ -1,0 +1,69 @@
+// Spacer
+
+.ini{
+  &-of{
+    overflow: hidden;
+  }
+  &-mr{
+    &-xs{
+      margin-right: 5px;
+    }
+    &-s{
+      margin-right: 10px;
+    }
+  }
+  &-my{
+    &-xs{
+      margin: 5px 0;
+    }
+    &-s{
+      margin: 10px 0;
+    }
+    &-m{
+      margin: 15px 0;
+    }
+  }
+  &-mb{
+    &-m{
+      margin-bottom: 15px;
+    }
+  }
+  &-va{
+    &-m{
+      vertical-align: middle;
+    }
+  }
+  &-d{
+    &-ib{
+      display: inline-block;
+    }
+  }
+  &-br{
+    &-xs{
+      border-radius: 4px;
+    }
+  }
+  &-fz{
+    &-xl{
+      font-size: 22px;
+    }
+  }
+  &-p{
+    &-0{
+      padding: 0 !important;
+    }
+  }
+  &-pl{
+    &-s{
+      padding-left: 20px !important;
+    }
+  }
+}
+
+.rs-db{
+  display: block;
+}
+
+.rs-d-ib{
+  display: inline-block;
+}

@@ -1,0 +1,128 @@
+<ng-include src="'vendor/app/view/account/insigths/header.html'"></ng-include>
+
+<section class="container">
+
+    <div class="profil-main">
+
+        <div class="profile-header basic-style second-shadow">
+            <div class="gravatar pull-left">
+                <a href="#" class="back ini-va-m ini-d-ib ini-mr-s ini-fz-xl">
+                    <span class="glyphicon glyphicon-menu-left"></span>
+                </a>
+                <h1 class=" ini-va-m ini-d-ib">
+                    Gestion de messages
+                </h1>
+            </div>
+        </div>
+
+        <div class="profile-body">
+
+            <aside class="toolbox basic-style col-md-4">
+                <div class="title"></div>
+                <div class="aside-body">
+                    <div class="card ini-p-0">
+                        <span class="ico blue-gradiant-effect-diagonal">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                        </span>
+                    </div>
+                </div>
+            </aside>
+
+            <aside class="publication basic-style col-md-4">
+                <div class="title">
+                    Mes messages
+                </div>
+                <div class="aside-body">
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Media heading</h4>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deserunt ea eaque earum est fugit quae, quibusdam quidem rem sequi!
+                        </div>
+                        <div class="action-container float-right">
+                            <ul class="target-action">
+                                <li>
+                                    <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn btn-default share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="publication-date">
+                            FAYCAL TOURE
+                        </div>
+                        <div class="publication-date">
+                            22 Février 2018 - 12 : 22
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <aside class="recommandations basic-style col-md-4 separate-shadow">
+                <div class="title">
+                    Rechercher un message
+                </div>
+                <div class="aside-body">
+                    <div class="search" ng-controller="TypeaheadCtrl">
+                        <input type="text" ng-model="customPopupSelected" placeholder="Custom popup template" uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-popup-template-url="customPopupTemplate.html" class="form-control">
+                    </div>
+                    </div>
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Media heading</h4>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deserunt ea eaque earum est fugit quae, quibusdam quidem rem sequi!
+                        </div>
+                        <div class="action-container float-right">
+                            <ul class="target-action">
+                                <li>
+                                    <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn btn-default share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="publication-date">
+                            FAYCAL TOURE
+                        </div>
+                        <div class="publication-date">
+                            22 Février 2018 - 12 : 22
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+</section>
+
+
+<!-- Search result -->
+
+<script type="text/ng-template" id="customPopupTemplate.html">
+    <div class="custom-popup-wrapper"
+         ng-style="{top: position().top+'px', left: position().left+'px'}"
+         style="display: block;"
+         ng-show="isOpen() && !moveInProgress"
+         aria-hidden="{{!isOpen()}}">
+        <p class="message">Liste de résultats.</p>
+
+        <ul class="dropdown-menu" role="listbox">
+            <li ng-repeat="match in matches track by $index" ng-class="{active: isActive($index) }"
+                ng-mouseenter="selectActive($index)" ng-click="selectMatch($index)" role="option" id="{{::match.id}}">
+                <div uib-typeahead-match index="$index" match="match" query="query" template-url="templateUrl"></div>
+            </li>
+        </ul>
+    </div>
+</script>
+
+<ng-include src="'vendor/app/view/account/insigths/footer.html'"></ng-include>

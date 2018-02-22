@@ -1,0 +1,129 @@
+// Initialisation
+
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ul{
+  list-style-type: none;
+}
+
+body, ul, li, p, h1, h2, h3, h4, p{
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5{
+  font-weight: bold;
+  font-family: 'Robotos', sans-serif;
+}
+
+p{
+  font-family: 'Robotos', sans-serif;
+}
+
+//html, body, main, section, div, form, script{
+//  @extend .clear-fix;
+//}
+
+image{
+  display: block;
+  vertical-align: middle;
+}
+
+// Bootsrtap
+
+.btn, .btn-lg{
+  -webkit-border-radius: initial;
+  -moz-border-radius: initial;
+  border-radius: initial;
+}
+
+// Alignements
+
+.align-center{
+  margin-top: 50vh !important;
+  @include setTranslate(0, -50%);
+}
+
+// Global Class
+
+.clear-fix{
+  &:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// AUTHER CLASS
+
+.welcome-home{
+  &:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(https://wearesocial-net.s3.amazonaws.com/wp-content/uploads/2017/07/inclusion-and-diversity2-1200.jpg) center center no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.white-color{
+  color: #fff;
+}
+
+// Modal
+
+.modal{
+  top: 40%;
+  transform: translate(0, -40%);
+  .modal-dialog {
+    .modal-content{
+      .modal-header{
+        background: #fafafa;
+      }
+      .modal-body{
+
+      }
+      .modal-footer{
+        background: #fafafa;
+      }
+    }
+  }
+}
+
+// MODULES CSS
+
+.typeahead-demo , .custom-popup-wrapper {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  background-color: #f9f9f9;
+}
+
+.typeahead-demo , .custom-popup-wrapper > .message {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  color: #868686;
+}
+
+.typeahead-demo , .custom-popup-wrapper > .dropdown-menu {
+  overflow-y: scroll;
+  max-height: 140px;
+  border: solid 1px #ccc;
+  position: static;
+  float: none;
+  display: block;
+  min-width: 340px;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}

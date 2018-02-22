@@ -1,0 +1,57 @@
+// Mixin
+
+@mixin marginFirstNlast($arg){
+  &:first-child{
+    padding-left: $arg;
+  }
+  &:last-child{
+    padding-right: $arg;
+  }
+}
+
+
+@mixin custumPseudoPosition($position, $top, $left, $translateX, $translateY, $color, $rgba-percent, $have-element : $default-have-element, $position-b : $default-have-position-b){
+  position: $position;
+
+  @if $position-b != null{
+    bottom: $top;
+  } @else {
+    top: $top;
+  }
+
+  left: $left;
+
+  -webkit-transform: translate($translateX, $translateY);
+  -moz-transform: translate($translateX, $translateY);
+  -ms-transform: translate($translateX, $translateY);
+  -o-transform: translate($translateX, $translateY);
+  transform: translate($translateX, $translateY);
+
+  @if $have-element != null {
+    content: "";
+    width: 0;
+    height: 0;
+  }
+
+  @if $color != null and $rgba-percent != null{
+    border-left: 10px solid rgba($color,$color,$color,$rgba-percent);
+    border-right: 10px solid rgba($color,$color,$color,$rgba-percent);
+    border-bottom: 10px solid #fff;
+  }
+}
+
+@mixin setSimpleTransition($value){
+  -webkit-transition: all $value;
+  -moz-transition: all $value;
+  -ms-transition: all $value;
+  -o-transition: all $value;
+  transition: all $value;
+}
+
+@mixin setTranslate($value : 0, $value-b : 0){
+  -webkit-transform: translate($value, $value-b);
+  -moz-transform: translate($value, $value-b);
+  -ms-transform: translate($value, $value-b);
+  -o-transform: translate($value, $value-b);
+  transform: translate($value, $value-b);
+}

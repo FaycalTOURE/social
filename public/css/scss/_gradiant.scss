@@ -1,0 +1,19 @@
+// GRADIANT
+
+.firs-gradiant-color{
+  background: #FF5F6D;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, $first-color-a, $first-color-b);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, $first-color-a, $first-color-b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.firs-gradiant-color-nt{
+  background: #FF5F6D;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, $first-color-a, $first-color-b);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, $first-color-a, $first-color-b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.firs-gradiant-color-b-nt{
+  background: #ff4b1f;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, $second-color-a, $second-color-b);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, $second-color-a, $second-color-b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

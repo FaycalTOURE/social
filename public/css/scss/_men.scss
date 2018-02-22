@@ -1,0 +1,17 @@
+.user-men{
+  $custum-primary-color : #2196F3;
+
+  .color-default-a{
+    background: $custum-primary-color;
+  }
+
+  .blue-gradiant-effect-diagonal{
+    background: #2196f3; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #2196f3 0%, #2989d8 50%, #57aff2 51%, #7db9e8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #2196f3 0%,#2989d8 50%,#57aff2 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #2196f3 0%,#2989d8 50%,#57aff2 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2196f3', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  }
+
+  @import "environnementAbstract";
+}

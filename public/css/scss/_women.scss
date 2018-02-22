@@ -1,0 +1,17 @@
+.user-women{
+  $custum-primary-color : #ff5f6d;
+
+  .color-default-a{
+    background: $custum-primary-color;
+  }
+
+  .blue-gradiant-effect-diagonal{
+    background: #ff5f6d; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #ff5f6d 0%, #ff7c87 50%, #ff5f6d 51%, #ff5160 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #ff5f6d 0%,#ff7c87 50%,#ff5f6d 51%,#ff5160 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #ff5f6d 0%,#ff7c87 50%,#ff5f6d 51%,#ff5160 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5f6d', endColorstr='#ff5160',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  }
+
+  @import "environnementAbstract";
+}

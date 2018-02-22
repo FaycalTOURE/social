@@ -1,22 +1,21 @@
 
 // MODULES
 
-const express = require('express');
-const app = express();
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-// const MongoClient = require('mongodb').MongoClient;
-const session = require('express-session');
+const express = require('express'),
+      app = express(),
+      cookieParser = require('cookie-parser'),
+      bodyParser = require('body-parser'),
+      db = require('./modules/mongoUtil'),
+      helper = require('./modules/helpersUtil'),
+      session = require('express-session');
 
+// DB URL
 
-// PORT
+const URL = 'mongodb://127.0.0.1:27017/jeumulti';
 
-var port = process.env.PORT || 8080;
+// MIDDLEWARE
 
-
-// MIDDLE WARE
-
-app.use('/public', express.static(__dirname + '/public'))
+ app.use('/public', express.static(__dirname + '/public'))
     .use('/bower_components', express.static(__dirname + '/bower_components'))
     .use('/vendor', express.static(__dirname + '/vendor'))
     .use(bodyParser.urlencoded({
@@ -32,20 +31,31 @@ app.use('/public', express.static(__dirname + '/public'))
     .use(cookieParser());
 
 
-// ROUTES
+// ROUTES, API
 
 app.get('/', function(req, res){
+
+    var collection = db.get().collection('inscrits');
+
+    collection.find().toArray(function(err, docs) {
+        console.log(docs);
+    });
+
     res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/index', function(req, res){
-    res.sendFile(__dirname + '/index.html');
-});
 
-// APIS
+// BOOTSTRAPING + MONGO
 
-// BOOTSTRAPING
+var port = process.env.PORT || 8080, server;
 
-var server = app.listen(port, function(){
-    console.log('à l\'écoute sur le port :' + port);
+db.connect(URL, function(err, db) {
+    if (err) {
+        console.log('Unable to connect to Mongo.');
+        process.exit(1)
+    }else{
+        server = app.listen(port, function(){
+            console.log('à l\'écoute sur le port :' + port);
+        });
+    }
 });
