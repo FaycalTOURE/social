@@ -20,7 +20,8 @@ var app  = angular.module('app', [
         })
         .state('profile', {
             url : '/profile',
-            templateUrl : './vendor/app/view/account/profile/home.html'
+            templateUrl : './vendor/app/view/account/profile/home.html',
+            controller : 'userCtrl'
         })
         .state('messages', {
             url : '/messages',

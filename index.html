@@ -27,14 +27,17 @@
 
         <script src="vendor/angular/common/scripts.js"></script>
         <script src="vendor/angular/common/controllers.js"></script>
+        <script src="vendor/angular/common/userCtrl.js"></script>
+
         <script src="vendor/angular/common/directives.js"></script>
         <script src="vendor/angular/common/services.js"></script>
+        <script src="vendor/angular/common/filters.js"></script>
 
         <!--<script type="text/javascript" src="public/angular/ui/ui-bootstrap-tpls-2.5.0.js"></script>-->
         <!--<script src="socket.io/socket.io.js"></script>-->
     </head>
 
-    <body ng-controller="mainCtrl" ui-view="layout" ng-class=" 'user-women' ">
+    <body ng-controller="mainCtrl" ui-view="layout" ng-class=" data.all.user.options.theme || 'user-men' ">
 
         <main ui-view></main>
 

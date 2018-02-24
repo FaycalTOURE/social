@@ -2,67 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d649bce5-9bc9-41ce-8c6b-284811d4a8ed" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/helpersUtil.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/mongoUtil.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/all.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/scss/_environnementAbstract.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/scss/_gradiant.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/scss/_init.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/scss/_men.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/scss/_mixins.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/scss/_shadow.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/scss/_sizes.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/scss/_spacers.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/scss/_variables.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/scss/_women.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/json/user.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/app/view/account/friends/home.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/app/view/account/main.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/app/view/account/messages/home.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/app/view/account/profile/home.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/app/view/account/publications/home.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/app/view/account/super-user-home.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/app/view/account/wall/home.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/app/view/main.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/app/view/main/main.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vendor/app/view/insigths/footer.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/insigths/footer.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vendor/app/view/insigths/header.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/insigths/header.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/json/message.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/json/publish.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/json/recommandation.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/angular/common/filters.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/angular/common/userCtrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_environnementAbstract.scss" afterPath="$PROJECT_DIR$/public/scss/_environnementAbstract.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_gradiant.scss" afterPath="$PROJECT_DIR$/public/scss/_gradiant.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_init.scss" afterPath="$PROJECT_DIR$/public/scss/_init.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_men.scss" afterPath="$PROJECT_DIR$/public/scss/_men.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_mixins.scss" afterPath="$PROJECT_DIR$/public/scss/_mixins.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_shadow.scss" afterPath="$PROJECT_DIR$/public/scss/_shadow.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_sizes.scss" afterPath="$PROJECT_DIR$/public/scss/_sizes.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_spacers.scss" afterPath="$PROJECT_DIR$/public/scss/_spacers.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_variables.scss" afterPath="$PROJECT_DIR$/public/scss/_variables.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_women.scss" afterPath="$PROJECT_DIR$/public/scss/_women.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/style.scss" afterPath="$PROJECT_DIR$/public/scss/style.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-bootstrap/.bower.json" afterPath="$PROJECT_DIR$/bower_components/angular-bootstrap/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-bootstrap/bower.json" afterPath="$PROJECT_DIR$/bower_components/angular-bootstrap/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-bootstrap/package.json" afterPath="$PROJECT_DIR$/bower_components/angular-bootstrap/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-bootstrap/ui-bootstrap-tpls.js" afterPath="$PROJECT_DIR$/bower_components/angular-bootstrap/ui-bootstrap-tpls.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js" afterPath="$PROJECT_DIR$/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-bootstrap/ui-bootstrap.js" afterPath="$PROJECT_DIR$/bower_components/angular-bootstrap/ui-bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-bootstrap/ui-bootstrap.min.js" afterPath="$PROJECT_DIR$/bower_components/angular-bootstrap/ui-bootstrap.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-ui-router/.bower.json" afterPath="$PROJECT_DIR$/bower_components/angular-ui-router/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-ui-router/CHANGELOG.md" afterPath="$PROJECT_DIR$/bower_components/angular-ui-router/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-ui-router/LICENSE" afterPath="$PROJECT_DIR$/bower_components/angular-ui-router/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-ui-router/bower.json" afterPath="$PROJECT_DIR$/bower_components/angular-ui-router/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-ui-router/release/angular-ui-router.js" afterPath="$PROJECT_DIR$/bower_components/angular-ui-router/release/angular-ui-router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-ui-router/release/angular-ui-router.js.map" afterPath="$PROJECT_DIR$/bower_components/angular-ui-router/release/angular-ui-router.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-ui-router/release/angular-ui-router.min.js" afterPath="$PROJECT_DIR$/bower_components/angular-ui-router/release/angular-ui-router.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-ui-router/release/angular-ui-router.min.js.map" afterPath="$PROJECT_DIR$/bower_components/angular-ui-router/release/angular-ui-router.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-ui-router/release/resolveService.js" afterPath="$PROJECT_DIR$/bower_components/angular-ui-router/release/resolveService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-ui-router/release/resolveService.min.js" afterPath="$PROJECT_DIR$/bower_components/angular-ui-router/release/resolveService.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-ui-router/release/stateEvents.js" afterPath="$PROJECT_DIR$/bower_components/angular-ui-router/release/stateEvents.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-ui-router/release/stateEvents.min.js" afterPath="$PROJECT_DIR$/bower_components/angular-ui-router/release/stateEvents.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-ui-router/release/ui-router-angularjs.js" afterPath="$PROJECT_DIR$/bower_components/angular-ui-router/release/ui-router-angularjs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-ui-router/release/ui-router-angularjs.min.js" afterPath="$PROJECT_DIR$/bower_components/angular-ui-router/release/ui-router-angularjs.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-ui-router/release/ui-router-angularjs.min.js.map" afterPath="$PROJECT_DIR$/bower_components/angular-ui-router/release/ui-router-angularjs.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower_components/angular-ui-router/yarn.lock" afterPath="$PROJECT_DIR$/bower_components/angular-ui-router/yarn.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/gulp-util/package.json" afterPath="$PROJECT_DIR$/node_modules/gulp-util/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/scss/style.scss" afterPath="$PROJECT_DIR$/public/css/scss/style.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/all.min.css" afterPath="$PROJECT_DIR$/public/css/all.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/json/user.json" afterPath="$PROJECT_DIR$/public/json/user.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/angular/common/controllers.js" afterPath="$PROJECT_DIR$/vendor/angular/common/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/angular/common/directives.js" afterPath="$PROJECT_DIR$/vendor/angular/common/directives.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/angular/common/scripts.js" afterPath="$PROJECT_DIR$/vendor/angular/common/scripts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/angular/common/services.js" afterPath="$PROJECT_DIR$/vendor/angular/common/services.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/account/friends/home.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/friends/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/account/insigths/header.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/insigths/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/account/messages/home.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/messages/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/account/profile/home.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/profile/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/account/publications/home.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/publications/home.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -73,91 +43,103 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file leaf-file-name="scripts.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/angular/common/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="55" lean-forward="false" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
+            <state relative-caret-position="-1011">
+              <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+              <folding>
+                <marker date="1519379779422" expanded="true" signature="4789:4804" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/app/view/account/profile/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="75" column="28" lean-forward="false" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="88" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/scss/style.scss">
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/app/view/account/insigths/header.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+            <state relative-caret-position="375">
+              <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/app/view/account/publications/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+            <state relative-caret-position="583">
+              <caret line="104" column="30" lean-forward="true" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="all.min.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/all.min.css">
+      <file leaf-file-name="services.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/angular/common/services.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-13032">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="242">
+              <caret line="42" column="15" lean-forward="true" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_mixins.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/scss/_mixins.scss">
+      <file leaf-file-name="userCtrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/angular/common/userCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="420">
+              <caret line="28" column="64" lean-forward="false" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/app/view/main.html">
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vendor/angular/common/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+            <state relative-caret-position="744">
+              <caret line="165" column="67" lean-forward="true" selection-start-line="165" selection-start-column="67" selection-end-line="165" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="publish.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/json/publish.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="_environnementAbstract.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/scss/_environnementAbstract.scss">
+        <entry file="file://$PROJECT_DIR$/public/scss/_environnementAbstract.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+            <state relative-caret-position="342">
+              <caret line="370" column="49" lean-forward="true" selection-start-line="370" selection-start-column="49" selection-end-line="370" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_women.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/scss/_women.scss">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_men.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/scss/_men.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+            <state relative-caret-position="450">
+              <caret line="133" column="23" lean-forward="true" selection-start-line="133" selection-start-column="23" selection-end-line="133" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -169,21 +151,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>@include translate(-50%);</find>
-      <find>authenticationProvider</find>
-      <find>index.public</find>
-      <find>defaultLoggedInState</find>
-      <find>border</find>
-      <find>padding: 5px</find>
-      <find>foot</find>
-      <find>separator</find>
-      <find>.bottom-separator</find>
-      <find>bottom-separator;</find>
       <find>bottom-separator</find>
       <find>nav</find>
       <find>$custum-primary-color</find>
@@ -199,11 +172,21 @@
       <find>user-</find>
       <find>body</find>
       <find>align-ce</find>
-      <find>subscribe-bottom</find>
       <find>handleSucess</find>
-      <find>@extend .clear-fix</find>
       <find>exec</find>
       <find>style.css</find>
+      <find>@extend .clear-fix</find>
+      <find>subscribe-bottom</find>
+      <find>info</find>
+      <find>border-top: solid 4px</find>
+      <find>.list-group-item</find>
+      <find>list-group-item</find>
+      <find>lastName</find>
+      <find>nlastName</find>
+      <find>=&gt;</find>
+      <find>Promise</find>
+      <find>5a8ef098f0b30ec86430bce5</find>
+      <find>ist-menu</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -220,27 +203,17 @@
         <option value="$PROJECT_DIR$/vendor/app/view/insigths/header.html" />
         <option value="$PROJECT_DIR$/vendor/app/view/insigths/footer.html" />
         <option value="$PROJECT_DIR$/vendor/app/view/main/main.html" />
-        <option value="$PROJECT_DIR$/vendor/app/view/account/insigths/header.html" />
         <option value="$PROJECT_DIR$/vendor/app/view/account/main.html" />
         <option value="$PROJECT_DIR$/vendor/app/view/main.html" />
         <option value="$PROJECT_DIR$/vendor/app/view/account/insigths/footer.html" />
-        <option value="$PROJECT_DIR$/vendor/angular/common/services.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/vendor/app/view/account/profile/profile.html" />
         <option value="$PROJECT_DIR$/vendor/angular/common/directives.js" />
         <option value="$PROJECT_DIR$/bower.json" />
-        <option value="$PROJECT_DIR$/vendor/angular/common/controllers.js" />
         <option value="$PROJECT_DIR$/vendor/app/view/account/super-user-home.html" />
-        <option value="$PROJECT_DIR$/vendor/app/view/account/friends/home.html" />
-        <option value="$PROJECT_DIR$/vendor/angular/common/scripts.js" />
         <option value="$PROJECT_DIR$/modules/mongoUtil.js" />
         <option value="$PROJECT_DIR$/modules/helpersUtil.js" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/vendor/app/view/account/messages/home.html" />
-        <option value="$PROJECT_DIR$/vendor/app/view/account/profile/home.html" />
-        <option value="$PROJECT_DIR$/vendor/app/view/account/publications/home.html" />
         <option value="$PROJECT_DIR$/vendor/app/view/account/wall/home.html" />
-        <option value="$PROJECT_DIR$/public/json/user.json" />
         <option value="$PROJECT_DIR$/public/css/scss/_variables.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/_shadow.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/_gradiant.scss" />
@@ -253,8 +226,24 @@
         <option value="$PROJECT_DIR$/public/css/scss/_women.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/_men.scss" />
         <option value="$PROJECT_DIR$/public/css/scss/style.scss" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/public/json/user.json" />
+        <option value="$PROJECT_DIR$/vendor/angular/common/scripts.js" />
+        <option value="$PROJECT_DIR$/public/json/message.json" />
+        <option value="$PROJECT_DIR$/public/json/publish.json" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/vendor/angular/common/filters.js" />
+        <option value="$PROJECT_DIR$/public/scss/_environnementAbstract.scss" />
+        <option value="$PROJECT_DIR$/public/json/recommandation.json" />
+        <option value="$PROJECT_DIR$/vendor/angular/common/services.js" />
+        <option value="$PROJECT_DIR$/vendor/app/view/account/friends/home.html" />
+        <option value="$PROJECT_DIR$/vendor/app/view/account/messages/home.html" />
+        <option value="$PROJECT_DIR$/vendor/app/view/account/profile/home.html" />
+        <option value="$PROJECT_DIR$/vendor/app/view/account/insigths/header.html" />
+        <option value="$PROJECT_DIR$/vendor/app/view/account/publications/home.html" />
+        <option value="$PROJECT_DIR$/vendor/angular/common/userCtrl.js" />
+        <option value="$PROJECT_DIR$/vendor/angular/common/controllers.js" />
       </list>
     </option>
   </component>
@@ -281,10 +270,26 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="198" />
+    <option name="x" value="61" />
     <option name="y" value="79" />
     <option name="width" value="1354" />
     <option name="height" value="991" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -327,14 +332,7 @@
               <item name="social" type="b2602c69:ProjectViewProjectNode" />
               <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="social" type="b2602c69:ProjectViewProjectNode" />
-              <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="scss" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="json" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="social" type="b2602c69:ProjectViewProjectNode" />
@@ -365,6 +363,21 @@
               <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="template" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="template" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="email" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -374,6 +387,33 @@
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="account" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="account" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="insigths" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="account" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="profile" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="social" type="b2602c69:ProjectViewProjectNode" />
+              <item name="social" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="view" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="account" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="publications" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -390,17 +430,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/vendor/app/view/account/publications" />
       <recent name="$PROJECT_DIR$/vendor/app/view/account/messages" />
       <recent name="$PROJECT_DIR$/vendor/app/view/account/friends" />
-      <recent name="$PROJECT_DIR$/vendor/app/view" />
-      <recent name="$PROJECT_DIR$/vendor/app/view/account" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/vendor/angular/common" />
+      <recent name="$PROJECT_DIR$/public/json" />
       <recent name="$PROJECT_DIR$/modules" />
       <recent name="$PROJECT_DIR$/vendor/app/view/account/messages" />
       <recent name="$PROJECT_DIR$/vendor/app/view/account/friends" />
-      <recent name="$PROJECT_DIR$/vendor/app/view/account/profile" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -429,15 +470,16 @@
       <option name="presentableId" value="Default" />
       <updated>1518028687361</updated>
       <workItem from="1518028688771" duration="128042000" />
-      <workItem from="1519296093045" duration="10009000" />
+      <workItem from="1519296093045" duration="73322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210631000" />
+    <option name="totallyTimeSpent" value="273944000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="198" y="79" width="1354" height="991" extended-state="0" />
+    <frame x="61" y="79" width="1354" height="991" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -446,7 +488,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27362806" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27362806" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -474,43 +516,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/insigths/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="41" column="44" lean-forward="true" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/angular/common/services.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/angular/common/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../MyPoseo Tests/ui/view/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="41" lean-forward="true" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../MyPoseo Tests/ui/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="65" lean-forward="true" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../MyPoseo Tests/Perso/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -571,13 +576,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/insigths/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="17" lean-forward="true" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Angular js/Sébastien GUILLON /exercices prof/exercices/3 - Les formulaires/exercice1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -607,14 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/angular/common/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="164" column="22" lean-forward="false" selection-start-line="164" selection-start-column="11" selection-end-line="164" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -630,24 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/angular/common/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding>
-            <marker date="1519136792720" expanded="true" signature="4752:4767" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/mongoUtil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/helpersUtil.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -656,31 +628,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/angular/common/services.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/messages/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="96" column="30" lean-forward="false" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/friends/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="146" column="40" lean-forward="true" selection-start-line="146" selection-start-column="40" selection-end-line="146" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/_variables.scss">
+    <entry file="file://$PROJECT_DIR$/public/scss/_variables.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
@@ -688,7 +636,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/_shadow.scss">
+    <entry file="file://$PROJECT_DIR$/public/scss/_shadow.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
           <caret line="43" column="1" lean-forward="false" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
@@ -696,7 +644,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/_gradiant.scss">
+    <entry file="file://$PROJECT_DIR$/public/scss/_gradiant.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
@@ -704,7 +652,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/_spacers.scss">
+    <entry file="file://$PROJECT_DIR$/public/scss/_spacers.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="609">
           <caret line="54" column="3" lean-forward="true" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
@@ -712,30 +660,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/_sizes.scss">
+    <entry file="file://$PROJECT_DIR$/public/scss/_sizes.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/publications/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="55" column="24" lean-forward="false" selection-start-line="55" selection-start-column="24" selection-end-line="57" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/profile/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1665">
-          <caret line="111" column="25" lean-forward="true" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="25" />
-          <folding>
-            <element signature="n#src#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#1;n#aside#1;n#div#1;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#src#0;n#img#0;n#a#0;n#div#0;n#div#1;n#div#1;n#aside#1;n#div#1;n#div#0;n#section#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -763,34 +692,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="44" column="3" lean-forward="true" selection-start-line="44" selection-start-column="3" selection-end-line="44" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/json/user.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/_init.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="48" column="1" lean-forward="false" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/_men.scss">
+    <entry file="file://$PROJECT_DIR$/public/scss/_men.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scss/_mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scss/_women.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -803,66 +740,172 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/_environnementAbstract.scss">
+    <entry file="file://$PROJECT_DIR$/modules/mongoUtil.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        <state relative-caret-position="90">
+          <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/_women.scss">
+    <entry file="file://$PROJECT_DIR$/public/scss/_init.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/scss/_mixins.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="55" lean-forward="false" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
+        <state relative-caret-position="975">
+          <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/all.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13032">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="19830">
+          <caret line="1321" column="1" lean-forward="true" selection-start-line="1321" selection-start-column="1" selection-end-line="1321" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+    <entry file="file://$PROJECT_DIR$/public/json/message.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="48" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/angular/common/filters.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scss/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/json/user.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="133" column="23" lean-forward="true" selection-start-line="133" selection-start-column="23" selection-end-line="133" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/json/recommandation.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scss/_environnementAbstract.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="370" column="49" lean-forward="true" selection-start-line="370" selection-start-column="49" selection-end-line="370" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/friends/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/messages/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/angular/common/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1011">
+          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding>
+            <marker date="1519379779422" expanded="true" signature="4789:4804" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="48" column="34" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/angular/common/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="42" column="15" lean-forward="true" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/insigths/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/profile/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="75" column="28" lean-forward="false" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/publications/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="104" column="30" lean-forward="true" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/json/publish.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/angular/common/userCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <caret line="28" column="64" lean-forward="false" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+    <entry file="file://$PROJECT_DIR$/vendor/angular/common/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        <state relative-caret-position="744">
+          <caret line="165" column="67" lean-forward="true" selection-start-line="165" selection-start-column="67" selection-end-line="165" selection-end-column="67" />
           <folding />
         </state>
       </provider>

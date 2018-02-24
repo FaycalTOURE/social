@@ -11,7 +11,7 @@ const express = require('express'),
 
 // DB URL
 
-const URL = 'mongodb://127.0.0.1:27017/jeumulti';
+const URL = 'mongodb://127.0.0.1:27017/social';
 
 // MIDDLEWARE
 
@@ -34,14 +34,159 @@ const URL = 'mongodb://127.0.0.1:27017/jeumulti';
 // ROUTES, API
 
 app.get('/', function(req, res){
-
-    var collection = db.get().collection('inscrits');
-
-    collection.find().toArray(function(err, docs) {
-        console.log(docs);
-    });
-
     res.sendFile(__dirname + '/index.html');
+});
+
+
+// CONNECTION
+
+app.get('/connexion', function(req, res){
+
+});
+
+app.get('/disconnect', function(req, res){
+
+});
+
+
+// USER
+
+app.get('/user/:id', function(req, res){
+    var collection = db.get().collection('user');
+    var id = req.params.id;
+
+    collection.find({ _id : db.makeObjectId(id) }).toArray(function(err, data) {
+        res.json(data);
+    });
+});
+
+app.get('/user/friends', function(req, res){
+
+});
+
+app.get('/user/friend/:id', function(req, res){
+
+});
+
+app.get('/user/friends/add', function(req, res){
+
+});
+
+app.get('/user/friends/add/:id', function(req, res){
+
+});
+
+app.get('/user/friends/added', function(req, res){
+
+});
+
+app.get('/user/friends/adding_process', function(req, res){
+
+});
+
+// MESSAGES
+
+app.get('/user/messages', function(req, res){
+
+});
+
+app.get('/user/message/:id', function(req, res){
+
+});
+
+app.get('/user/messages/sended', function(req, res){
+
+});
+
+app.get('/user/messages/received', function(req, res){
+
+});
+
+app.get('/user/message/deleted', function(req, res){
+
+});
+
+// PUBLISH
+
+app.get('/user/publish/', function(req, res){
+    // db.school.aggregate([
+    //     { $unwind :'$students'},
+    //     { $project : { _id:0, rollNo : '$students.rollNo', name : '$students.name', score : '$students.score' } }
+    // ]);
+});
+
+app.get('/user/publish/:id', function(req, res){
+    var collection = db.get().collection('publish');
+    var id = req.params.id;
+
+    collection.find({"publish.logs.from" : { $eq : id } }).toArray(function(err, data) {
+        res.json(data);
+    });
+});
+
+// RECOMMANDATION
+
+app.get('/user/recommandation/:id', function(req, res){
+    var collection = db.get().collection('recommandation');
+    var id = req.params.id;
+
+    collection.find({ "recommandation.logs.to" : { $eq : id } }).toArray(function(err, data) {
+        res.json(data);
+    });
+});
+
+// NOTIFICATIONS
+
+app.get('/user/emails/sended', function(req, res){
+
+});
+
+app.get('/user/emailsf/received', function(req, res){
+
+});
+
+// UPDATE
+
+app.get('/user/:id/update', function(req, res){
+
+});
+app.get('/user/message/:id/update', function(req, res){
+
+});
+app.get('/user/publish/:id/update', function(req, res){
+
+});
+
+// DELETE
+
+app.get('user/delete/message/:id', function(req, res){
+
+});
+
+app.get('user/delete/friend/:id', function(req, res){
+
+});
+
+app.get('user/delete/recommandation/:id', function(req, res){
+
+});
+
+app.get('user/delete/adding_process/:id', function(req, res){
+
+});
+
+app.get('user/delete/publish/:id', function(req, res){
+
+});
+
+// AUTHER
+
+app.get('/user/recommandation', function(req, res){
+
+});
+
+app.get('/user/stats/all', function(req, res){
+
 });
 
 

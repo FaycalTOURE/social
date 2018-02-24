@@ -16,10 +16,11 @@ var exec = require('child_process').exec;
 var location = {
     icons8: 'Standard_myposeo',
     source: {
-        scss: './public/css/scss/**/*.scss'
+        scss: 'public/scss/**/*.scss',
+        bootstrap : 'node_modules/bootstrap-sass/assets/stylesheets'
     },
     dest: {
-        css: './public/css'
+        css: 'public/css'
     }
 };
 
@@ -107,9 +108,13 @@ var task = {
 
 gulp.task('sass', task.sass);
 gulp.task('upload', task.upload);
+
 // gulp.task('backstop_reference', task.backstop_reference);
 // gulp.task('backstop_test', task.backstop_test);
 
+gulp.task('watch-upload', ['upload'], function() {
+    gulp.watch(location.source.scss, ['upload']);
+});
 
 gulp.task('browser-sync', ['sass'], function() {
     browserSync.init({

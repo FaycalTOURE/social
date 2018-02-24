@@ -45,6 +45,30 @@ app.factory('$authentication', function (ipCookie) {
     }
 });
 
+app.factory('getUserinfos', function ($http, $log, $q, $timeout) {
+    var deferred = $q.defer();
+
+    return {
+        byID: function (id) {
+            var promise;
+
+            var request = function(arg){
+                $http.get('/user/' + arg)
+                     .then(function(response){
+                        deferred.resolve(response || '- - -');
+                     }, function(){
+                        deferred.reject($log.info('Erreur lors du charmgement de donnée.'));
+                    });
+                return deferred.promise;
+            };
+
+           promise = request(id);
+
+           return promise;
+        }
+    }
+});
+
 
 // rootScope.$apply -> $timeout
 

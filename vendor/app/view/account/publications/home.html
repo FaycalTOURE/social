@@ -6,7 +6,7 @@
 
         <div class="profile-header basic-style second-shadow">
             <div class="gravatar pull-left">
-                <a href="#" class="back ini-va-m ini-d-ib ini-mr-s ini-fz-xl">
+                <a ui-sref="profile" class="back ini-va-m ini-d-ib ini-mr-s ini-fz-xl">
                     <span class="glyphicon glyphicon-menu-left"></span>
                 </a>
                 <h1 class=" ini-va-m ini-d-ib">
@@ -32,32 +32,39 @@
                 <div class="title">
                     Mes Publications
                 </div>
+
                 <div class="aside-body">
-                    <div class="media">
+                    <div class="media" ng-repeat="item in data.all.publications.list">
                         <div class="media-left">
                             <a href="#">
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </a>
                         </div>
                         <div class="media-body">
-                            <h4 class="media-heading">Media heading</h4>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deserunt ea eaque earum est fugit quae, quibusdam quidem rem sequi!
+                            <h4 class="media-heading">{{ item.publish.title }}</h4>
+                            {{ item.publish.content }}
                         </div>
                         <div class="action-container float-right">
                             <ul class="target-action">
                                 <li>
-                                    <a href="#" class="btn btn-default modify"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a href="{{ item._id }}" class="btn btn-default modify"><span class="glyphicon glyphicon-pencil"></span></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <a href="{{ item._id }}" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
                                 </li>
                             </ul>
                         </div>
                         <div class="publication-date">
-                            FAYCAL TOURE
+                            {{ data.all.user.firstName + ' ' + data.all.user.lastName }}
                         </div>
                         <div class="publication-date">
-                            22 Février 2018 - 12 : 22
+                            {{ item.logs.sendAt }}
+                        </div>
+                    </div>
+
+                    <div class="media" ng-show="data.all.publications.list.length == 0">
+                        <div class="media-body">
+                            Vous n'avez rien publier sur votre fil.
                         </div>
                     </div>
                 </div>
@@ -67,20 +74,21 @@
                 <div class="title">
                     Rechercher un post
                 </div>
-                <div class="aside-body">
-                    <div class="search" ng-controller="TypeaheadCtrl">
-                        <input type="text" ng-model="customPopupSelected" placeholder="Custom popup template" uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-popup-template-url="customPopupTemplate.html" class="form-control">
+                <div class="aside-body" ng-controller="TypeaheadCtrl">
+                    <div class="search">
+                        <h4>Custom templates for results</h4>
+                        <!--<pre>Model: {{customPopupSelected | json}}</pre>-->
+                        <input type="text" ng-model="customPopupSelected" placeholder="Custom popup template" uib-typeahead="state as state.publish.title for state in statesWithFlags" typeahead-popup-template-url="customPopupTemplate.html" class="form-control">
                     </div>
-                    </div>
-                    <div class="media">
+                    <div class="media" ng-if="customPopupSelected">
                         <div class="media-left">
                             <a href="#">
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </a>
                         </div>
                         <div class="media-body">
-                            <h4 class="media-heading">Media heading</h4>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deserunt ea eaque earum est fugit quae, quibusdam quidem rem sequi!
+                            <h4 class="media-heading">{{ customPopupSelected.publish.title }}</h4>
+                            {{ customPopupSelected.publish.content }}
                         </div>
                         <div class="action-container float-right">
                             <ul class="target-action">
@@ -93,16 +101,16 @@
                             </ul>
                         </div>
                         <div class="publication-date">
-                            FAYCAL TOURE
+                            {{ data.all.user.firstName + ' ' + data.all.user.lastName }}
                         </div>
                         <div class="publication-date">
-                            22 Février 2018 - 12 : 22
+                            {{ customPopupSelected.publish.logs.sendAt }}
                         </div>
                     </div>
-                </aside>
-            </div>
+                 </div>
+            </aside>
         </div>
-
+    </div>
 </section>
 
 

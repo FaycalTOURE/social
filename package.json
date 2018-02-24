@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "bootstrap-sass": "^3.3.7",
     "browser-sync": "^2.23.6",
     "child_process": "^1.0.2",
     "cookie-parser": "^1.4.3",

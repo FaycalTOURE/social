@@ -1,0 +1,11 @@
+{
+	"recommandation": {
+		"type": "friend",
+		"logs": {
+				"from" : "5a8eee8cf0b30ec86430bc60",
+				"to": "5a8eee8cf0b30ec86430bc5f",
+				"recommanded" : "5a8eee8cf0b30ec86430bc60"
+		}
+	}
+}
+

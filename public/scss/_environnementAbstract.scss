@@ -5,6 +5,10 @@ section{
   padding: 10px 0;
   margin-top: 80px;
   position: relative;
+  .list-group-item{
+    overflow: hidden;
+    border-radius: 4px;
+  }
   .media, .list-group{
     cursor: pointer;
     position: relative;
@@ -83,7 +87,7 @@ section{
             font-weight: bold;
             padding: 5px;
             border-radius: 8px;
-            border: solid 1px #ccc;
+            border: solid 1px rgba(0,0,0,.01);
             background: #fff;
             box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
             span{
@@ -95,6 +99,7 @@ section{
     }
     .profile-body{
       background: #fff;
+      border-bottom: solid 4px $custum-primary-color;
       @extend .clear-fix;
       color: $color-text-default;
       aside{
@@ -364,8 +369,8 @@ nav{
               }
             }
             &:hover, &:focus, &:target, &:active{
-              color: #fff;
-              @extend .firs-gradiant-color-nt;
+              // color: #fff;
+              background: rgba(0,0,0,0.05);
             }
           }
           &:not(:first-child){
