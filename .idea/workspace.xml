@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d649bce5-9bc9-41ce-8c6b-284811d4a8ed" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/json/message.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/json/publish.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/json/recommandation.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/angular/common/filters.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/angular/common/userCtrl.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_environnementAbstract.scss" afterPath="$PROJECT_DIR$/public/scss/_environnementAbstract.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_gradiant.scss" afterPath="$PROJECT_DIR$/public/scss/_gradiant.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_init.scss" afterPath="$PROJECT_DIR$/public/scss/_init.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_men.scss" afterPath="$PROJECT_DIR$/public/scss/_men.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_mixins.scss" afterPath="$PROJECT_DIR$/public/scss/_mixins.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_shadow.scss" afterPath="$PROJECT_DIR$/public/scss/_shadow.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_sizes.scss" afterPath="$PROJECT_DIR$/public/scss/_sizes.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_spacers.scss" afterPath="$PROJECT_DIR$/public/scss/_spacers.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_variables.scss" afterPath="$PROJECT_DIR$/public/scss/_variables.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/_women.scss" afterPath="$PROJECT_DIR$/public/scss/_women.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/css/scss/style.scss" afterPath="$PROJECT_DIR$/public/scss/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/all.min.css" afterPath="$PROJECT_DIR$/public/css/all.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/json/user.json" afterPath="$PROJECT_DIR$/public/json/user.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/angular/common/controllers.js" afterPath="$PROJECT_DIR$/vendor/angular/common/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/angular/common/scripts.js" afterPath="$PROJECT_DIR$/vendor/angular/common/scripts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/angular/common/services.js" afterPath="$PROJECT_DIR$/vendor/angular/common/services.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/account/friends/home.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/friends/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/account/insigths/header.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/insigths/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/account/messages/home.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/messages/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/account/profile/home.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/profile/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/account/publications/home.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/publications/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -105,12 +75,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/angular/common/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="744">
-              <caret line="165" column="67" lean-forward="true" selection-start-line="165" selection-start-column="67" selection-end-line="165" selection-end-column="67" />
+            <state relative-caret-position="534">
+              <caret line="151" column="0" lean-forward="true" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="60">
+                <caret line="4" column="34" lean-forward="true" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="35" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -130,16 +113,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
               <caret line="370" column="49" lean-forward="true" selection-start-line="370" selection-start-column="49" selection-end-line="370" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="133" column="23" lean-forward="true" selection-start-line="133" selection-start-column="23" selection-end-line="133" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -244,6 +217,7 @@
         <option value="$PROJECT_DIR$/vendor/app/view/account/publications/home.html" />
         <option value="$PROJECT_DIR$/vendor/angular/common/userCtrl.js" />
         <option value="$PROJECT_DIR$/vendor/angular/common/controllers.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -470,12 +444,12 @@
       <option name="presentableId" value="Default" />
       <updated>1518028687361</updated>
       <workItem from="1518028688771" duration="128042000" />
-      <workItem from="1519296093045" duration="73322000" />
+      <workItem from="1519296093045" duration="73653000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="273944000" />
+    <option name="totallyTimeSpent" value="274275000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="79" width="1354" height="991" extended-state="0" />
@@ -544,16 +518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="105">
-            <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -591,13 +555,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/:" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/app/view/account/insigths/footer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -902,11 +859,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/angular/common/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="165" column="67" lean-forward="true" selection-start-line="165" selection-start-column="67" selection-end-line="165" selection-end-column="67" />
+        <state relative-caret-position="534">
+          <caret line="151" column="0" lean-forward="true" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="60">
+            <caret line="4" column="34" lean-forward="true" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="35" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
