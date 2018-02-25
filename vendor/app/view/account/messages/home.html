@@ -33,6 +33,7 @@
                     Mes messages
                 </div>
                 <div class="aside-body" ng-init="allMessages = data.all.messages.received.concat(data.all.messages.sended)">
+
                     <div class="media" ng-repeat="item in allMessages">
                         <div class="media-left">
                             <a href="#">
@@ -57,6 +58,13 @@
                             {{ item.message.logs.sendAt }}
                         </div>
                     </div>
+
+                    <div class="media" ng-show="allMessages.length == 0">
+                        <div class="media-body">
+                            Vous n'avez aucun message.
+                        </div>
+                    </div>
+
                 </div>
             </aside>
 
