@@ -1,10 +1,7 @@
 app.controller('userCtrl', function ($scope, $http, $timeout, $rootScope, getUserinfos) {
 
     $scope.data = {
-        all : null,
-        messages : null,
-        recommandation : null,
-        publish : null
+        all : null
     };
 
     $scope.user = {
@@ -32,8 +29,7 @@ app.controller('userCtrl', function ($scope, $http, $timeout, $rootScope, getUse
                         for(var i = 0; i < response.data.length; i++){
                             $scope.data.all.publications.list.push(response.data[i]);
                         }
-                        console.log('all', $scope.data.all);
-                        // $rootScope.$broadcast('publishLoaded',  "deedeeddede");
+                        console.log('publish => all', $scope.data.all);
                     });
             };
             $timeout(loadPublish, 0);
@@ -44,6 +40,7 @@ app.controller('userCtrl', function ($scope, $http, $timeout, $rootScope, getUse
                 $scope.user.loadData.apply(null, ['/user/recommandation/5a8eee8cf0b30ec86430bc5f'])
                     .then(function(response){
                         var data = response.data;
+
                         data.forEach(function (result) {
                             // console.log('OK =>', result);
                             var logs = result.recommandation.logs;
@@ -68,17 +65,28 @@ app.controller('userCtrl', function ($scope, $http, $timeout, $rootScope, getUse
             };
             $timeout(loadRecommandation, 0);
             return this;
+        },
+        message : function(){
+            var loadMessages = function(){
+                $scope.user.loadData.apply(null, ['/user/message/5a8eee8cf0b30ec86430bc5f']).
+                then(function(response){
+                    console.log('messages', response);
+
+                    for(var i = 0; i < response.data.length; i++){
+                        if(response.data[i].message.logs.from === '5a8eee8cf0b30ec86430bc5f'){
+                            $scope.data.all.messages.sended.push(response.data[i]);
+                        }
+                        if(response.data[i].message.logs.to === '5a8eee8cf0b30ec86430bc5f'){
+                            $scope.data.all.messages.received.push(response.data[i]);
+                        }
+                    }
+                    console.log('messages => all', $scope.data.all);
+                });
+            };
+            $timeout(loadMessages, 0);
+            return this;
         }
-        // messages : function(){
-        //     var loadMessages = function(){
-        //         this.loadData.apply('/user/messages/').
-        //         then(function(data){
-        //             $scope.data.messages = data;
-        //         });
-        //     };
-        //     $timeout(loadMessages, 0);
-        // }
     };
 
-    $scope.user.user().publish().recommandation();
+    $scope.user.user().publish().recommandation().message();
 });

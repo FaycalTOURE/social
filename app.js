@@ -91,7 +91,15 @@ app.get('/user/messages', function(req, res){
 });
 
 app.get('/user/message/:id', function(req, res){
+    var collection = db.get().collection('message');
+    var id = req.params.id;
 
+    collection.find({ $or:[
+        {"message.logs.to" : { $eq : id }},
+        {"message.logs.from" : { $eq : id }}
+    ]}).toArray(function(err, data) {
+        res.json(data);
+    });
 });
 
 app.get('/user/messages/sended', function(req, res){

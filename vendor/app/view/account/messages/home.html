@@ -32,32 +32,29 @@
                 <div class="title">
                     Mes messages
                 </div>
-                <div class="aside-body">
-                    <div class="media">
+                <div class="aside-body" ng-init="allMessages = data.all.messages.received.concat(data.all.messages.sended)">
+                    <div class="media" ng-repeat="item in allMessages">
                         <div class="media-left">
                             <a href="#">
                                 <span class="glyphicon glyphicon-envelope"></span>
                             </a>
                         </div>
                         <div class="media-body">
-                            <h4 class="media-heading">Media heading</h4>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deserunt ea eaque earum est fugit quae, quibusdam quidem rem sequi!
+                            <h4 class="media-heading">{{ item.message.title }}</h4>
+                            {{ item.message.content }}
                         </div>
                         <div class="action-container float-right">
                             <ul class="target-action">
                                 <li>
-                                    <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <a href="{{ item._id }}" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-default share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                    <a href="{{ item.message.logs.from }}" class="btn btn-default share"><span class="glyphicon glyphicon-share-alt"></span></a>
                                 </li>
                             </ul>
                         </div>
                         <div class="publication-date">
-                            FAYCAL TOURE
-                        </div>
-                        <div class="publication-date">
-                            22 Février 2018 - 12 : 22
+                            {{ item.message.logs.sendAt }}
                         </div>
                     </div>
                 </div>
@@ -67,42 +64,43 @@
                 <div class="title">
                     Rechercher un message
                 </div>
-                <div class="aside-body">
-                    <div class="search" ng-controller="TypeaheadCtrl">
-                        <input type="text" ng-model="customPopupSelected" placeholder="Custom popup template" uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-popup-template-url="customPopupTemplate.html" class="form-control">
+                <div class="aside-body" ng-controller="TypeaheadMessageCtrl">
+                    <div class="search">
+                        <h4>Custom templates for results</h4>
+                        <!--<pre>Model: {{customPopupSelected | json}}</pre>-->
+                        <input type="text" ng-model="customPopupSelected" placeholder="Custom popup template" uib-typeahead="state as state.message.title for state in states" typeahead-popup-template-url="customPopupTemplate.html" class="form-control">
                     </div>
-                    </div>
-                    <div class="media">
+                    <div class="media" ng-if="customPopupSelected">
                         <div class="media-left">
                             <a href="#">
-                                <span class="glyphicon glyphicon-envelope"></span>
+                                <span class="glyphicon glyphicon-pencil"></span>
                             </a>
                         </div>
                         <div class="media-body">
-                            <h4 class="media-heading">Media heading</h4>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deserunt ea eaque earum est fugit quae, quibusdam quidem rem sequi!
+                            <h4 class="media-heading">{{ customPopupSelected.message.title }}</h4>
+                            {{ customPopupSelected.message.content }}
                         </div>
                         <div class="action-container float-right">
                             <ul class="target-action">
                                 <li>
-                                    <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <a href="#" class="btn btn-default modify"><span class="glyphicon glyphicon-pencil"></span></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-default share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                    <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
                                 </li>
                             </ul>
                         </div>
                         <div class="publication-date">
-                            FAYCAL TOURE
+                            {{ data.all.user.firstName + ' ' + data.all.user.lastName }}
                         </div>
                         <div class="publication-date">
-                            22 Février 2018 - 12 : 22
+                            {{ customPopupSelected.message.logs.sendAt }}
                         </div>
                     </div>
-                </aside>
-            </div>
+                </div>
+            </aside>
         </div>
-
+    </div>
 </section>
 
 

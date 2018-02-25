@@ -74,11 +74,11 @@
                 <div class="title">
                     Rechercher un post
                 </div>
-                <div class="aside-body" ng-controller="TypeaheadCtrl">
+                <div class="aside-body" ng-controller="TypeaheadPublishCtrl">
                     <div class="search">
                         <h4>Custom templates for results</h4>
                         <!--<pre>Model: {{customPopupSelected | json}}</pre>-->
-                        <input type="text" ng-model="customPopupSelected" placeholder="Custom popup template" uib-typeahead="state as state.publish.title for state in statesWithFlags" typeahead-popup-template-url="customPopupTemplate.html" class="form-control">
+                        <input type="text" ng-model="customPopupSelected" placeholder="Custom popup template" uib-typeahead="state as state.publish.title for state in states" typeahead-popup-template-url="customPopupTemplate.html" class="form-control">
                     </div>
                     <div class="media" ng-if="customPopupSelected">
                         <div class="media-left">

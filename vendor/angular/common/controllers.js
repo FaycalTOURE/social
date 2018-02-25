@@ -162,6 +162,10 @@ app.controller('footerCtrl', function () {
 });
 
 
-app.controller('TypeaheadCtrl', function($scope, $http, $rootScope) {
-    $scope.statesWithFlags = $rootScope.data.all.publications.list;
+app.controller('TypeaheadPublishCtrl', function($scope, $http, $rootScope) {
+    $scope.states = $rootScope.data.all.publications.list;
+});
+
+app.controller('TypeaheadMessageCtrl', function($scope, $http, $rootScope) {
+    $scope.states = $rootScope.data.all.messages.received.concat($rootScope.data.all.messages.sended);
 });
