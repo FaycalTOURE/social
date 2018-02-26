@@ -33,52 +33,34 @@
                     Liste des amis
                 </div>
                 <div class="aside-body">
-                    <div class="media">
+                    <div class="media" ng-repeat="item in data.all.friends.list">
                         <div class="media-left">
                             <a href="#">
-                                <img class="media-object" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNjFhNjRmOTdmZiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE2MWE2NGY5N2ZmIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" alt="...">
+                                <img class="media-object" ng-src="{{ item.user.image || 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNjFhNjRmOTdmZiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE2MWE2NGY5N2ZmIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=' }}" alt="...">
                             </a>
                         </div>
                         <div class="media-body">
-                            <h4 class="media-heading">Antoine</h4>
-                            Darouk
+                            <h4 class="media-heading">{{ item.user.firstName }}</h4>
+                            {{ item.user.lastName }}
                         </div>
                         <div class="action-container float-right">
                             <ul class="target-action">
                                 <li>
-                                    <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <a href="{{ item._id }}" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-default share"><span class="glyphicon glyphicon-envelope"></span></a>
+                                    <a href="{{ item._id }}" class="btn btn-default share"><span class="glyphicon glyphicon-envelope"></span></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-default share">suivre <span class="glyphicon glyphicon-menu-right"></span></a>
+                                    <a ui-sref="friend({id:item._id})" class="btn btn-default share">suivre <span class="glyphicon glyphicon-menu-right"></span></a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="media">
-                        <div class="media-left">
-                            <a href="#">
-                                <img class="media-object" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNjFhNjRmOTdmZiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE2MWE2NGY5N2ZmIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" alt="...">
-                            </a>
-                        </div>
+
+                    <div class="media" ng-show="data.all.friends.list.length == 0">
                         <div class="media-body">
-                            <h4 class="media-heading">Touré</h4>
-                            Fayçal
-                        </div>
-                        <div class="action-container float-right">
-                            <ul class="target-action">
-                                <li>
-                                    <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn btn-default share"><span class="glyphicon glyphicon-envelope"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn btn-default share">suivre <span class="glyphicon glyphicon-menu-right"></span></a>
-                                </li>
-                            </ul>
+                            Vous n'avez pas encore d'ami.
                         </div>
                     </div>
                 </div>
@@ -88,61 +70,37 @@
                 <div class="title">
                     Rechercher un ami
                 </div>
-                <div class="aside-body">
-                    <div class="search" ng-controller="TypeaheadCtrl">
-                        <input type="text" ng-model="customPopupSelected" placeholder="Custom popup template" uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-popup-template-url="customPopupTemplate.html" class="form-control">
+                <div class="aside-body" ng-controller="TypeaheadFriendsCtrl">
+                    <div class="search">
+                        <input type="text" ng-model="customPopupSelected" placeholder="Recherche par nom de famille" uib-typeahead="state as state.user.firstName for state in states" typeahead-popup-template-url="customPopupTemplate.html" class="form-control">
                     </div>
-                    </div>
-                    <div class="media">
+                    <div class="media" ng-if="customPopupSelected">
                         <div class="media-left">
                             <a href="#">
-                                <img class="media-object" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNjFhNjRmOTdmZiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE2MWE2NGY5N2ZmIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" alt="...">
+                                <span class="glyphicon glyphicon-pencil"></span>
                             </a>
                         </div>
                         <div class="media-body">
-                            <h4 class="media-heading">MIMIUEUX</h4>
-                            Charles
+                            <h4 class="media-heading">{{ customPopupSelected.user.firstName }}</h4>
+                            {{ customPopupSelected.user.lastName }}
                         </div>
                         <div class="action-container float-right">
                             <ul class="target-action">
                                 <li>
-                                    <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <a href="{{ customPopupSelected._id }}" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-default share"><span class="glyphicon glyphicon-envelope"></span></a>
+                                    <a href="{{ customPopupSelected._id }}" class="btn btn-default share"><span class="glyphicon glyphicon-envelope"></span></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-default share">suivre <span class="glyphicon glyphicon-menu-right"></span></a>
+                                    <a ui-sref="friend({id:customPopupSelected._id})" class="btn btn-default share">suivre <span class="glyphicon glyphicon-menu-right"></span></a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="media">
-                        <div class="media-left">
-                            <a href="#">
-                                <img class="media-object" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNjFhNjRmOTdmZiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE2MWE2NGY5N2ZmIj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMy40Njg3NSIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" alt="...">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">Touré</h4>
-                            Fayçal
-                        </div>
-                        <div class="action-container float-right">
-                            <ul class="target-action">
-                                <li>
-                                    <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn btn-default share"><span class="glyphicon glyphicon-envelope"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn btn-default share">suivre <span class="glyphicon glyphicon-menu-right"></span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </aside>
-            </div>
+                </div>
+            </aside>
+        </div>
 
             <div class="profile-footer">
                 <h2 class="ini-my-s">
@@ -171,29 +129,6 @@
             </div>
 
         </div>
-
 </section>
-
-
-
-
-<!-- Search result -->
-
-<script type="text/ng-template" id="customPopupTemplate.html">
-    <div class="custom-popup-wrapper"
-         ng-style="{top: position().top+'px', left: position().left+'px'}"
-         style="display: block;"
-         ng-show="isOpen() && !moveInProgress"
-         aria-hidden="{{!isOpen()}}">
-        <p class="message">Liste de résultats.</p>
-
-        <ul class="dropdown-menu" role="listbox">
-            <li ng-repeat="match in matches track by $index" ng-class="{active: isActive($index) }"
-                ng-mouseenter="selectActive($index)" ng-click="selectMatch($index)" role="option" id="{{::match.id}}">
-                <div uib-typeahead-match index="$index" match="match" query="query" template-url="templateUrl"></div>
-            </li>
-        </ul>
-    </div>
-</script>
 
 <ng-include src="'vendor/app/view/account/insigths/footer.html'"></ng-include>

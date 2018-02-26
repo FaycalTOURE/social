@@ -50,7 +50,6 @@ section{
   .basic-style{
     background: #fff;
     padding: 20px;
-    // @extend .second-shadow;
   }
   .action-container{
     position: absolute;
@@ -100,34 +99,22 @@ section{
     .profile-body{
       background: #fff;
       border-bottom: solid 4px $custum-primary-color;
+      height: 100vh;
       @extend .clear-fix;
       color: $color-text-default;
       aside{
-        max-height: 1000px;
+        max-height: 1200px;
         overflow-y: scroll;
-        &.toolbox{
-          // background: $custum-primary-color;
-        }
         position: relative;
-        //float: left;
-        //width: 33.33%;
+        height: 100%;
         .aside-body{
           margin-top: 35px;
           >div{
-            &:not(last-child){
+            &:not(:last-child){
               padding-bottom: 10px;
               border-bottom: solid 1px rgba(0,0,0,0.1);
             }
           }
-          //.media, .list-group{
-          //  cursor: pointer;
-          //  position: relative;
-          //  &:hover{
-          //    .action-container{
-          //      display: block;
-          //    }
-          //  }
-          //}
           .media{
             &:hover{
               background: #F5F5F5;
@@ -142,6 +129,7 @@ section{
             overflow: hidden;
             border: none !important;
             @extend .second-shadow;
+            transition: all 0.1s ease-in-out;
             span{
               &.ico{
                 padding: 20px;
@@ -159,11 +147,26 @@ section{
             div{
               &.card-body{
                 margin: 0 20px;
+                text-align: center;
+                a{
+                  &.btn{
+                    border: none;
+                  }
+                  &:hover{
+                    background: transparent;
+                  }
+                }
               }
             }
-            &:not(last-child){
+            &:not(:last-child){
               margin-bottom: 15px;
               @extend .initial-border;
+            }
+            &:hover,
+            &:active ,
+            &:target ,
+            &:focus{
+              transform: scale(0.95);
             }
           }
         }
@@ -172,11 +175,8 @@ section{
           top:0;
           left: 0;
           text-align: left;
-          // color: #fff;
           font-size: 18px;
           font-weight: bold;
-          letter-spacing: 1px;
-          // background: $custum-primary-color;
           padding: 10px 8px;
           width: 100%;
           z-index: 1;
@@ -184,14 +184,15 @@ section{
       }
     }
     .profile-body{
-      margin: 5px 0;
+      margin: 0;
       .card-title{
         margin-bottom: 1px;
-        font-size: 18px;
+        font-size: 29px;
       }
       .card-text{
         max-width: 80%;
         font-size: 12px;
+        margin: auto;
       }
       a{
         margin-top: 5px;
@@ -205,6 +206,7 @@ section{
     @extend .second-shadow;
     .btn-default{
       border: solid;
+      color: initial;
     }
   }
 }
@@ -240,9 +242,6 @@ nav{
   top: 0;
   height: 80px;
   background: #fff;
-  &.navigation{
-    // @extend .headers-shadow;
-  }
 }
 
 .menu{
@@ -253,12 +252,9 @@ nav{
   @extend .initial-border;
   @extend .clear-fix;
 
-  // Ul pull-left and pull right
-
   ul{
     display: table;
     height: 100%;
-    //@include marginFirstNlast(10px);
     li{
       display: table-cell;
       vertical-align: middle;
@@ -377,27 +373,6 @@ nav{
             padding-top: 10px;
             border-top: solid 1px rgba(0,0,0,0.1) !important;
           }
-          //&:first-child{
-          //  a{
-          //    &:hover, &:focus, &:target, &:active{
-          //      color: #fff;
-          //      @extend .firs-gradiant-color-nt;
-          //      @at-root {
-          //        li{
-          //          @at-root {
-          //            ul{
-          //              &.right, &.left{
-          //                &:hover:before{
-          //                  border-bottom-color: $first-color-a !important;
-          //                }
-          //              }
-          //            }
-          //          }
-          //        }
-          //      }
-          //    }
-          //  }
-          //}
         }
       }
       a{
@@ -417,7 +392,7 @@ nav{
   // Separators
 
   .bottom-separator{
-    &:not(last-child){
+    &:not(:last-child){
       padding-bottom: 10px;
       border-bottom: solid 1px rgba(0,0,0,0.1);
     }

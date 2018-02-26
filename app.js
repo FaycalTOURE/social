@@ -60,12 +60,19 @@ app.get('/user/:id', function(req, res){
     });
 });
 
-app.get('/user/friends', function(req, res){
+app.get('/user/:id/friends/add/:f_id', function(req, res){
+    var collection = db.get().collection('user');
+    var id = req.params.id,
+        f_id = req.params.f_id;
+
+    collection.update(
+        { _id : db.makeObjectId(id)},
+        { $addToSet: { 'friends.list' : f_id } }
+    );
 
 });
 
 app.get('/user/friend/:id', function(req, res){
-
 });
 
 app.get('/user/friends/add', function(req, res){
@@ -73,6 +80,10 @@ app.get('/user/friends/add', function(req, res){
 });
 
 app.get('/user/friends/add/:id', function(req, res){
+
+    var collection = db.get().collection('user');
+
+
 
 });
 
@@ -158,6 +169,11 @@ app.get('/user/emailsf/received', function(req, res){
 app.get('/user/:id/update', function(req, res){
 
 });
+
+app.get('/user/friends/:id/update', function(req, res){
+
+});
+
 app.get('/user/message/:id/update', function(req, res){
 
 });
@@ -166,6 +182,18 @@ app.get('/user/publish/:id/update', function(req, res){
 });
 
 // DELETE
+
+app.get('/user/:id/friends/delete/:f_id', function(req, res){
+    var collection = db.get().collection('user');
+    var id = req.params.id,
+        f_id = req.params.f_id;
+
+    collection.update(
+        { _id : db.makeObjectId(id)},
+        { $pull : { 'friends.list' : f_id }}
+    );
+
+});
 
 app.get('user/delete/message/:id', function(req, res){
 

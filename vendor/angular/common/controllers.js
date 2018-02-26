@@ -4,6 +4,8 @@
 
 app.controller('mainCtrl', function($scope, $rootScope, $uibModal, $log, $document, $window, $timeout, $q, $templateCache, $http){
 
+    $rootScope.userId = '5a8eee8cf0b30ec86430bc5f';
+
     $rootScope.data = {
         all : null
     };
@@ -168,4 +170,8 @@ app.controller('TypeaheadPublishCtrl', function($scope, $http, $rootScope) {
 
 app.controller('TypeaheadMessageCtrl', function($scope, $http, $rootScope) {
     $scope.states = $rootScope.data.all.messages.received.concat($rootScope.data.all.messages.sended);
+});
+
+app.controller('TypeaheadFriendsCtrl', function($scope, $http, $rootScope) {
+    $scope.states = $rootScope.data.all.friends.list;
 });

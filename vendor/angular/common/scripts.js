@@ -6,9 +6,8 @@ var app  = angular.module('app', [
     'ui.router.stateHelper',
     'ui.router.login',
     'ipCookie'
-])
-.config(function ($stateProvider, $urlRouterProvider, stateHelperProvider, $loginProvider) {
-
+    ])
+    .config(function ($stateProvider, $urlRouterProvider, stateHelperProvider, $loginProvider) {
     $stateProvider
         .state('index', {
             url : '/index',
@@ -42,6 +41,79 @@ var app  = angular.module('app', [
         .state('friends', {
             url : '/friends',
             templateUrl : './vendor/app/view/account/friends/home.html'
+        })
+        .state('friend', {
+            url : '/friend/{id}',
+            templateUrl : './vendor/app/view/account/profile/friend.html',
+            controller : function ($stateParams, $rootScope, $scope, $timeout, $http) {
+                
+                // $rootScope.userId = $stateParams.id;
+                $scope.userId = $stateParams.id;
+
+                $scope.user = {
+                    loadData : function(){
+                        var r_api = arguments[0];
+                        return $http.get(r_api);
+                    },
+                    user : function(){
+                        var loadUser = function(){
+                            $scope.user.loadData.apply(null, ['/user/' + $scope.userId])
+                                .then(function(response){
+                                    console.log('user', response);
+                                    $scope.data.all = response.data[0];
+                                    $rootScope.data.all = response.data[0];
+                                });
+                        };
+                        $timeout(loadUser, 0);
+                        return this;
+                    },
+                    publish : function(){
+                        var loadPublish = function(){
+                            $scope.user.loadData.apply(null, ['/user/publish/' + $scope.userId])
+                                .then(function(response){
+                                    console.log('publish', response);
+                                    for(var i = 0; i < response.data.length; i++){
+                                        $scope.data.all.publications.list.push(response.data[i]);
+                                    }
+                                });
+                        };
+                        $timeout(loadPublish, 100);
+                        return this;
+                    },
+                    recommandation : function(){
+                        var loadRecommandation = function(){
+                            $scope.user.loadData.apply(null, ['/user/recommandation/' + $scope.userId])
+                                .then(function(response){
+                                    var data = response.data;
+
+                                    data.forEach(function (result) {
+                                        var logs = result.recommandation.logs;
+                                        var from = logs.from;
+                                        var recommanded = logs.recommanded;
+
+                                        $http.get('/user/' + from)
+                                            .then(function (success) {
+                                                result.recommandation.logs.from = success.data[0].user.firstName;
+                                                result.recommandation.logs.fromId = success.data[0]._id;
+                                            });
+
+                                        $http.get('/user/' + recommanded)
+                                            .then(function (success) {
+                                                result.recommandation.logs.recommanded = success.data[0].user.firstName;
+                                                result.recommandation.logs.recommandedId = success.data[0]._id;
+                                            });
+
+                                        $scope.data.all.friends.recommandations.push(result);
+                                    });
+                                });
+                        };
+                        $timeout(loadRecommandation, 200);
+                        return this;
+                    }
+                };
+
+                $scope.user.user().publish().recommandation();
+            }
         });
 
     // stateHelperProvider
@@ -109,35 +181,37 @@ var app  = angular.module('app', [
     $urlRouterProvider
         .otherwise('/')
         .when('', '/');
-})
-.run(function($templateCache) {
-    $templateCache.put('size-options.tpl.html',
-        '<ul class="list-menu right">'
-            + '<li>'
-                + '<a href="#" class="rs-db" ng-class="ui.icoSize">'
-                    + '<span class="pull-left">'
-                        + '<span class="rs-db glyphicon glyphicon-text-size"></span>'
-                    + '</span>'
-                    + '<span class="pull-right">'
-                        + '<select ng-model="$parent.ui.icoSize" class="form-control">'
-                            + '<option value="ico-size">s</option>'
-                            + '<option value="ico-size-xl">xl</option>'
-                            + '<option value="ico-size-xxl">xxl</option>'
-                        + '</select>'
-                    + '</span>'
-                + '</a>'
-            + '</li>'
-        + '</ul>'
-    );
-/*    $templateCache.put('customPopupTemplate.html',
-        '<div class="custom-popup-wrapper" ng-style="{top: position().top+'+ 'px' +', left: position().left+'+ 'px' +'}" style="display: block;"ng-show="isOpen() && !moveInProgress"aria-hidden="{{!isOpen()}}">'
-            + '<p class="message">select location from drop down.</p>'
-            + '<ul class="dropdown-menu" role="listbox">'
-                + '<li ng-repeat="match in matches track by $index" ng-class="{active: isActive($index) }" ng-mouseenter="selectActive($index)" ng-click="selectMatch($index)" role="option" id="{{::match.id}}">'
-                    + '<div uib-typeahead-match index="$index" match="match" query="query" template-url="templateUrl"></div>'
-                + '</li>'
-            + '</ul>'
-    + '</div>'
-    );*/
-});
+    })
+    .run(function($templateCache) {
+        $templateCache.
+            put('size-options.tpl.html',
+                '<ul class="list-menu right">'
+                    + '<li>'
+                        + '<a href="#" class="rs-db" ng-class="ui.icoSize">'
+                            + '<span class="pull-left">'
+                                + '<span class="rs-db glyphicon glyphicon-text-size"></span>'
+                            + '</span>'
+                            + '<span class="pull-right">'
+                                + '<select ng-model="$parent.ui.icoSize" class="form-control">'
+                                    + '<option value="ico-size">s</option>'
+                                    + '<option value="ico-size-xl">xl</option>'
+                                    + '<option value="ico-size-xxl">xxl</option>'
+                                + '</select>'
+                            + '</span>'
+                        + '</a>'
+                    + '</li>'
+                + '</ul>'
+            );
+        $templateCache.
+            put('customPopupTemplate.html',
+                '<div class="custom-popup-wrapper" ng-style="{top: position().top+'+ 'px' +', left: position().left+'+ 'px' +'}" style="display: block;"ng-show="isOpen() && !moveInProgress"aria-hidden="{{!isOpen()}}">'
+                    + '<p class="message">select location from drop down.</p>'
+                    + '<ul class="dropdown-menu" role="listbox">'
+                        + '<li ng-repeat="match in matches track by $index" ng-class="{active: isActive($index) }" ng-mouseenter="selectActive($index)" ng-click="selectMatch($index)" role="option" id="{{::match.id}}">'
+                            + '<div uib-typeahead-match index="$index" match="match" query="query" template-url="templateUrl"></div>'
+                        + '</li>'
+                    + '</ul>'
+                + '</div>'
+            );
+    });
 

@@ -1,0 +1,115 @@
+<ng-include src="'vendor/app/view/account/insigths/header.html'"></ng-include>
+
+<section class="container">
+
+    <div class="profil-main">
+
+        <div class="profile-header basic-style second-shadow">
+            <div class="gravatar pull-left">
+                <div class="content">
+                    <img class="profile ini-d-ib" src="https://s-media-cache-ak0.pinimg.com/originals/ca/14/3a/ca143acfbafaa5762c839eba433822f1.png" alt="#">
+                    <p class="profile-infos">{{  data.all.user.firstName || 'Name' }},
+                        <span>{{ data.all.user.lastName || 'Prénom'}}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-body">
+            <aside class="toolbox basic-style col-md-4">
+                <div class="title color-default-a white-color ini-pl-s">
+                    Raccourcis
+                </div>
+                <div class="aside-body">
+                    <div class="card">
+                        <span class="ico blue-gradiant-effect-diagonal">
+                            <span class="glyphicon glyphicon-user"></span>
+                        </span>
+                        <div class="card-body">
+                            <h5 class="card-title">Amis</h5>
+                            <a ui-sref="friends" class="btn btn-default btn-lg">Gérer {{  data.all.user.lastName }}</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <span class="ico blue-gradiant-effect-diagonal">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                        </span>
+                        <div class="card-body">
+                            <h5 class="card-title">Messages</h5>
+                            <a ui-sref="messages" class="btn btn-default btn-lg">Ecrire à {{  data.all.user.lastName }}</a>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+
+            <aside class="publication basic-style col-md-4">
+                <div class="title color-default-a white-color">
+                    Publications de {{  data.all.user.lastName }}
+                </div>
+                <div class="aside-body">
+                    <div class="media" ng-repeat="item in data.all.publications.list">
+                        <div class="media-left">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">{{ item.publish.title }}</h4>
+                            {{ item.publish.content }}
+                        </div>
+                        <div class="publication-date">
+                            {{ data.all.user.firstName + ' ' + data.all.user.lastName }}
+                        </div>
+                        <div class="publication-date">
+                            {{ item.logs.sendAt }}
+                        </div>
+                    </div>
+
+                    <div class="media" ng-show="data.all.publications.list.length == 0">
+                        <div class="media-body">
+                            {{  data.all.user.lastName }} n'a pas de publications.
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <aside class="recommandations basic-style col-md-4 separate-shadow">
+                <div class="title color-default-a white-color">
+                    Recommandations de {{  data.all.user.lastName }}
+                </div>
+                <div class="aside-body">
+                    <div class="list-group" ng-repeat="item in data.all.friends.recommandations">
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Suggestion {{ item.recommandation.type }}</h4>
+                            <p class="list-group-item-text">
+                                <strong>{{ item.recommandation.logs.from }}</strong> vous recommande <strong>{{ item.recommandation.logs.recommanded }}</strong>
+                            </p>
+                        </a>
+                        <div class="action-container float-right ini-mb-m">
+                            <ul class="target-action">
+                                <li>
+                                    <a href="{{ item.recommandation.logs.recommandedId  }}" class="btn btn-default delete"><span class="glyphicon glyphicon-ok"></span></a>
+                                </li>
+                                <li>
+                                    <a href="{{ item._id }}" class="btn btn-default delete"><span class="glyphicon glyphicon-remove"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="media" ng-show="data.all.friends.recommandations.length == 0">
+                        <div class="media-body">
+                            {{  data.all.user.lastName }} n'a pas de recommandation.
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+
+    </div>
+</section>
+
+<ng-include src="'vendor/app/view/account/insigths/footer.html'"></ng-include>

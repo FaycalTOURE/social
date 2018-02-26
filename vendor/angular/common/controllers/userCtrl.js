@@ -1,5 +1,5 @@
 app.controller('userCtrl', function ($scope, $http, $timeout, $rootScope, getUserinfos) {
-
+    $scope.userId = $rootScope.userId;
     $scope.data = {
         all : null
     };
@@ -11,7 +11,7 @@ app.controller('userCtrl', function ($scope, $http, $timeout, $rootScope, getUse
         },
         user : function(){
             var loadUser = function(){
-                $scope.user.loadData.apply(null, ['/user/5a8eee8cf0b30ec86430bc5f'])
+                $scope.user.loadData.apply(null, ['/user/' + $scope.userId])
                             .then(function(response){
                                 console.log('user', response);
                                 $scope.data.all = response.data[0];
@@ -23,26 +23,24 @@ app.controller('userCtrl', function ($scope, $http, $timeout, $rootScope, getUse
         },
         publish : function(){
             var loadPublish = function(){
-                $scope.user.loadData.apply(null, ['/user/publish/5a8eee8cf0b30ec86430bc5f'])
+                $scope.user.loadData.apply(null, ['/user/publish/' + $scope.userId])
                     .then(function(response){
                         console.log('publish', response);
                         for(var i = 0; i < response.data.length; i++){
                             $scope.data.all.publications.list.push(response.data[i]);
                         }
-                        console.log('publish => all', $scope.data.all);
                     });
             };
-            $timeout(loadPublish, 0);
+            $timeout(loadPublish, 100);
             return this;
         },
         recommandation : function(){
             var loadRecommandation = function(){
-                $scope.user.loadData.apply(null, ['/user/recommandation/5a8eee8cf0b30ec86430bc5f'])
+                $scope.user.loadData.apply(null, ['/user/recommandation/' + $scope.userId])
                     .then(function(response){
                         var data = response.data;
 
                         data.forEach(function (result) {
-                            // console.log('OK =>', result);
                             var logs = result.recommandation.logs;
                             var from = logs.from;
                             var recommanded = logs.recommanded;
@@ -63,30 +61,48 @@ app.controller('userCtrl', function ($scope, $http, $timeout, $rootScope, getUse
                         });
                     });
             };
-            $timeout(loadRecommandation, 0);
+            $timeout(loadRecommandation, 200);
             return this;
         },
         message : function(){
             var loadMessages = function(){
-                $scope.user.loadData.apply(null, ['/user/message/5a8eee8cf0b30ec86430bc5f']).
+                $scope.user.loadData.apply(null, ['/user/message/' + $scope.userId]).
                 then(function(response){
                     console.log('messages', response);
 
                     for(var i = 0; i < response.data.length; i++){
-                        if(response.data[i].message.logs.from === '5a8eee8cf0b30ec86430bc5f'){
+                        if(response.data[i].message.logs.from === $scope.userId){
                             $scope.data.all.messages.sended.push(response.data[i]);
                         }
-                        if(response.data[i].message.logs.to === '5a8eee8cf0b30ec86430bc5f'){
+                        if(response.data[i].message.logs.to === $scope.userId){
                             $scope.data.all.messages.received.push(response.data[i]);
                         }
                     }
-                    console.log('messages => all', $scope.data.all);
                 });
             };
-            $timeout(loadMessages, 0);
+            $timeout(loadMessages, 300);
+            return this;
+        },
+        friend : function () {
+            var loadFriends = function () {
+                for(var i = 0; i < $scope.data.all.friends.list.length; i++){
+                    $http.get('/user/' + $scope.data.all.friends.list[i]).
+                          then(function (response) {
+                            console.log('friends', response);
+                              if(response.data[0].hasOwnProperty('_id')){
+                                    if($scope.data.all.friends.list.indexOf($scope.data.all.friends.list[i]) !== -1){
+                                        $scope.data.all.friends.list.splice(0, $scope.data.all.friends.list.indexOf($scope.data.all.friends.list[i]));
+                                    }
+                                    $scope.data.all.friends.list.push(response.data[0]);
+                              }
+                        });
+                }
+                console.log('All =>  Datas =>', $scope.data.all);
+            };
+            $timeout(loadFriends, 400);
             return this;
         }
     };
 
-    $scope.user.user().publish().recommandation().message();
+    $scope.user.user().publish().recommandation().message().friend();
 });
