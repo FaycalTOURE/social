@@ -15,5 +15,14 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5f6d', endColorstr='#ff5160',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   }
 
+  .separate-shadow{
+    // -webkit-box-shadow: -1px -2px 10px rgba(0, 0, 0, 0.1);
+    // -moz-box-shadow: -1px -2px 10px rgba(0, 0, 0, 0.1);
+    // box-shadow: -1px -2px 10px rgba(0, 0, 0, 0.1);
+    background: #eee !important;
+    border-bottom: solid 3px $custum-primary-color;
+  }
+
+
   @import "environnementAbstract";
 }

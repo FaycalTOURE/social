@@ -16,6 +16,7 @@ app.controller('userCtrl', function ($scope, $http, $timeout, $rootScope, getUse
                                 console.log('user', response);
                                 $scope.data.all = response.data[0];
                                 $rootScope.data.all = response.data[0];
+                                $scope.avatar = $scope.data.all.hasOwnProperty('admin') ? 'public/assets/user/' + $rootScope.data.all.admin.avatar.filename : 'https://s-media-cache-ak0.pinimg.com/originals/ca/14/3a/ca143acfbafaa5762c839eba433822f1.png';
                             });
             };
             $timeout(loadUser, 0);

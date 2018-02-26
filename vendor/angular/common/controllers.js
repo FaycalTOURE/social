@@ -10,7 +10,6 @@ app.controller('mainCtrl', function($scope, $rootScope, $uibModal, $log, $docume
         all : null
     };
 
-    // Récupérer les valeurs non initiés et initier avec la data
     var hydrate = function(one, two){
         var data = {};
         for(var index in one){
@@ -23,17 +22,12 @@ app.controller('mainCtrl', function($scope, $rootScope, $uibModal, $log, $docume
                 one[index] = two[index];
             }
         }
-        // return data;
-        // peux retourner nouveau tablea mettre code data[index] a la place de one[index] dans boucle 2
     };
 
-    // Personnaliser valeurs de mon Tableau
     var initObj = function(inner, outer){
         for(var index in outer){
             inner[index] = outer[index];
         }
-        //return inner
-        // peux retourner nouveau tablea
     };
 
     $scope.ui = {
@@ -41,6 +35,7 @@ app.controller('mainCtrl', function($scope, $rootScope, $uibModal, $log, $docume
     };
 
     // Modal
+
     $scope.modal = {
         animationsEnabled : false,
         title : null,
@@ -64,7 +59,6 @@ app.controller('mainCtrl', function($scope, $rootScope, $uibModal, $log, $docume
     $scope.open = function (data) {
         var modal = $scope.modal,
             received = data ? data : '';
-        //reveivedTemplate = $templateCache.get(received.template);
 
         var deferred = $q.defer();
 
@@ -175,3 +169,11 @@ app.controller('TypeaheadMessageCtrl', function($scope, $http, $rootScope) {
 app.controller('TypeaheadFriendsCtrl', function($scope, $http, $rootScope) {
     $scope.states = $rootScope.data.all.friends.list;
 });
+
+app.controller('uploadCtrl', ['$scope', 'fileUpload', function($scope, fileUpload){
+    $scope.uploadFile = function(){
+        var file = $scope.myFile;
+        var uploadUrl = "/upload";
+        fileUpload.uploadFileToUrl(file, uploadUrl);
+    };
+}]);

@@ -48,8 +48,8 @@ app.factory('$authentication', function (ipCookie) {
 app.factory('getUserinfos', function ($http, $log, $q) {
     var deferred = $q.defer();
     return {
-        byID: function (id) {
-            $http.get('/user/' + id)
+        all: function () {
+            $http.get('/user')
                  .then(function(response){
                     deferred.resolve(response || '- - -');
                  }, function(){
@@ -59,3 +59,29 @@ app.factory('getUserinfos', function ($http, $log, $q) {
         }
     }
 });
+
+app.service('fileUpload', ['$http', '$window', '$rootScope', function ($http, $window, $rootScope) {
+    this.uploadFileToUrl = function(file, uploadUrl){
+        var fd = new FormData();
+        var fid = $rootScope.data.all._id;
+        fd.append('file', file, fid);
+        $http.post(uploadUrl, fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+        }).then(function (resp) {
+            if(resp.data.error_code === 0){
+                $window.alert('Success ' + resp.config.data.file.name + 'uploaded. Response: ');
+            } else {
+                $window.alert('an error occured');
+            }
+        }, function (resp) {
+            console.log('Error status: ' + resp.status);
+            $window.alert('Error status: ' + resp.status);
+        }, function (evt) {
+            console.log(evt);
+            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+            vm.progress = 'progress: ' + progressPercentage + '% ';
+        });
+    }
+}]);

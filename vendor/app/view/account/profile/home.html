@@ -7,11 +7,15 @@
         <div class="profile-header basic-style second-shadow">
             <div class="gravatar pull-left">
                 <div class="content">
-                    <img class="profile ini-d-ib" src="https://s-media-cache-ak0.pinimg.com/originals/ca/14/3a/ca143acfbafaa5762c839eba433822f1.png" alt="#">
+                    <img class="profile ini-d-ib" ng-src="{{ avatar }}" alt="#">
                     <p class="profile-infos">{{  data.all.user.firstName || 'Name' }},
                         <span>{{ data.all.user.lastName || 'Prénom'}}</span>
                     </p>
                 </div>
+            </div>
+            <div ng-controller = "uploadCtrl">
+                <input type = "file" file-model = "myFile" accept="image/*" ngf-max-size="2MB"/>
+                <button ng-click = "uploadFile()">Upload File</button>
             </div>
         </div>
 

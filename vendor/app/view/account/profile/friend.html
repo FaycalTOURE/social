@@ -7,7 +7,7 @@
         <div class="profile-header basic-style second-shadow">
             <div class="gravatar pull-left">
                 <div class="content">
-                    <img class="profile ini-d-ib" src="https://s-media-cache-ak0.pinimg.com/originals/ca/14/3a/ca143acfbafaa5762c839eba433822f1.png" alt="#">
+                    <img class="profile ini-d-ib" ng-src="{{ avatar }}" alt="#">
                     <p class="profile-infos">{{  data.all.user.firstName || 'Name' }},
                         <span>{{ data.all.user.lastName || 'Prénom'}}</span>
                     </p>
@@ -87,16 +87,6 @@
                                 <strong>{{ item.recommandation.logs.from }}</strong> vous recommande <strong>{{ item.recommandation.logs.recommanded }}</strong>
                             </p>
                         </a>
-                        <div class="action-container float-right ini-mb-m">
-                            <ul class="target-action">
-                                <li>
-                                    <a href="{{ item.recommandation.logs.recommandedId  }}" class="btn btn-default delete"><span class="glyphicon glyphicon-ok"></span></a>
-                                </li>
-                                <li>
-                                    <a href="{{ item._id }}" class="btn btn-default delete"><span class="glyphicon glyphicon-remove"></span></a>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
 
                     <div class="media" ng-show="data.all.friends.recommandations.length == 0">

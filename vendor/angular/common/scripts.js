@@ -40,14 +40,32 @@ var app  = angular.module('app', [
         })
         .state('friends', {
             url : '/friends',
-            templateUrl : './vendor/app/view/account/friends/home.html'
+            templateUrl : './vendor/app/view/account/friends/home.html',
+            controller : function ($scope, $timeout, getUserinfos) {
+                $scope.allUsers = [];
+                $scope.user = {
+                    loadUsers : function () {
+                        var loadall = function () {
+                            getUserinfos.all()
+                                .then(function (response) {
+                                    for(var i = 0; i < response.data.length; i++){
+                                        $scope.allUsers.push(response.data[i]);
+                                    }
+                                });
+                        };
+                        $timeout(loadall, 500);
+                        return this;
+                    }
+                };
+                $scope.user.loadUsers();
+                console.log('n n n n n n ', $scope.allUsers);
+            }
         })
         .state('friend', {
             url : '/friend/{id}',
             templateUrl : './vendor/app/view/account/profile/friend.html',
             controller : function ($stateParams, $rootScope, $scope, $timeout, $http) {
-                
-                // $rootScope.userId = $stateParams.id;
+
                 $scope.userId = $stateParams.id;
 
                 $scope.user = {
@@ -62,6 +80,8 @@ var app  = angular.module('app', [
                                     console.log('user', response);
                                     $scope.data.all = response.data[0];
                                     $rootScope.data.all = response.data[0];
+                                    console.log($scope.data.all, $scope.data.all, $scope.data.all);
+                                    $scope.avatar = $scope.data.all.hasOwnProperty('admin') ? 'public/assets/user/' + $scope.data.all.admin.avatar.filename : 'https://s-media-cache-ak0.pinimg.com/originals/ca/14/3a/ca143acfbafaa5762c839eba433822f1.png';
                                 });
                         };
                         $timeout(loadUser, 0);
@@ -212,6 +232,33 @@ var app  = angular.module('app', [
                         + '</li>'
                     + '</ul>'
                 + '</div>'
+            );
+        $templateCache.
+            put('add-friend.tpl.html',
+            '<div class="media" ng-repeat="item in allUsers">'
+                +'<div class="media-left">'
+                    +'<a href="#">'
+                        +'<img class="media-object" ng-src="public/assets/user/{{ item.admin.avatar.filename }}" src="https://s-media-cache-ak0.pinimg.com/originals/ca/14/3a/ca143acfbafaa5762c839eba433822f1.png" alt="...">'
+                    +'</a>'
+                +'</div>'
+                +'<div class="media-body">'
+                    +'<h4 class="media-heading">{{ item.user.firstName }}</h4>'
+                    +'{{ item.user.lastName }}'
+                +'</div>'
+                +'<div class="action-container float-right">'
+                +'<ul class="target-action">'
+                    +'<li>'
+                        +'<a href="{{ item._id }}" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>'
+                    +'</li>'
+                    +'<li>'
+                        +'<a href="{{ item._id }}" class="btn btn-default share"><span class="glyphicon glyphicon-envelope"></span></a>'
+                    +'</li>'
+                    +'<li>'
+                        +'<a ui-sref="friend({id:item._id})" class="btn btn-default share">suivre <span class="glyphicon glyphicon-menu-right"></span></a>'
+                    +'</li>'
+                +'</ul>'
+                +'</div>'
+             +'</div>'
             );
     });
 

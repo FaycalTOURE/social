@@ -7,7 +7,10 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       db = require('./modules/mongoUtil'),
       helper = require('./modules/helpersUtil'),
-      session = require('express-session');
+      session = require('express-session'),
+      multer  = require('multer'),
+      path = require('path'),
+      mime = require('mime-types');
 
 // DB URL
 
@@ -16,6 +19,7 @@ const URL = 'mongodb://127.0.0.1:27017/social';
 // MIDDLEWARE
 
  app.use('/public', express.static(__dirname + '/public'))
+    .use(express.static(path.join(__dirname, '/public')))
     .use('/bower_components', express.static(__dirname + '/bower_components'))
     .use('/vendor', express.static(__dirname + '/vendor'))
     .use(bodyParser.urlencoded({
@@ -28,13 +32,48 @@ const URL = 'mongodb://127.0.0.1:27017/social';
     }))
     .use(bodyParser.json())
     .use(bodyParser.urlencoded({ extended: true }))
-    .use(cookieParser());
+    .use(cookieParser())
+    .use(function(req, res, next) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        next();
+    });
+
+ app.set('port', process.env.PORT || 8080);
+
+
+// DATA
+
+var storage = multer.diskStorage({
+    destination: 'public/assets/user',
+    filename: function (req, file, cb) {
+        console.log(file);
+        if( mime.extension(file.mimetype) === 'png' ||
+            mime.extension(file.mimetype) === 'jpg') {
+            cb(null, file.originalname.split('.')[file.originalname.split('.').length -1] + '.' + mime.extension(file.mimetype))
+        }
+    }
+});
+
+var upload = multer({ storage: storage });
 
 
 // ROUTES, API
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
+});
+
+app.post('/upload', upload.single('file'), function(req,res,next){
+    console.log('Uploade Successful file =>', req.file, 'body =>', req.body);
+    // in db
+    var collection = db.get().collection('user');
+    var id = req.file.originalname;
+    collection.update(
+        { _id : db.makeObjectId(id)},
+        { $set: { 'admin.avatar' : req.file } }
+    );
 });
 
 
@@ -50,6 +89,15 @@ app.get('/disconnect', function(req, res){
 
 
 // USER
+
+app.get('/user', function(req, res){
+    var collection = db.get().collection('user');
+
+    collection.find({}).toArray(function(err, data) {
+        res.json(data);
+    });
+});
+
 
 app.get('/user/:id', function(req, res){
     var collection = db.get().collection('user');
@@ -226,17 +274,17 @@ app.get('/user/stats/all', function(req, res){
 });
 
 
-// BOOTSTRAPING + MONGO
+// BOOTSTRAPING /  MONGO
 
-var port = process.env.PORT || 8080, server;
+var server;
 
 db.connect(URL, function(err, db) {
     if (err) {
         console.log('Unable to connect to Mongo.');
         process.exit(1)
     }else{
-        server = app.listen(port, function(){
-            console.log('à l\'écoute sur le port :' + port);
+        server = app.listen(app.get('port'), function(){
+            console.log('à l\'écoute sur le port :' + app.get('port'));
         });
     }
 });

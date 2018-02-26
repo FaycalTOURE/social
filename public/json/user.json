@@ -1,8 +1,8 @@
  [
    {
       "user": {
-          "firstName": "TOURE",
-          "lastName": "FAYCAL",
+          "firstName": "Jeremy",
+          "lastName": "Chaïoui",
           "address": [
               {
                   "street": "rue jean richard bloch",
@@ -12,52 +12,22 @@
               }
           ],
           "options" : {
-              "theme" : "user-men"
+              "theme" : "user-men",
+              "image" : null
           },
           "logs": {
             "status" : "disconnected",
             "membrerSince" : "21/01/2016",
             "messagesCounter" : 0,
             "publicationsCounter" : 0
-          }
-      },
-      "friends": {
-          "list": [],
-          "messages": [],
-          "recommandations": [],
-          "addingProcess": [],
-          "deleted": []
-      },
-      "messages": {
-          "received": [],
-          "deleted": [],
-          "sended": []
-      },
-      "publications": {
-          "list": []
-      }
-  },
-  {
-      "user": {
-          "firstName": "Mimieux",
-          "lastName": "Charles",
-          "address": [
-              {
-                  "street": "Quare la garenne",
-                  "city": "Paris",
-                  "zipCode": "75012",
-                  "country": "FRANCE"
-              }
-          ],
-          "options" : {
-              "theme" : "user-women"
           },
-          "logs": {
-            "status" : "disconnected",
-            "membrerSince" : "21/01/2016",
-            "messagesCounter" : 0,
-            "publicationsCounter" : 0
-          }
+          "admin" : {
+            "avatar" : null
+          },
+         "session" : {
+          "e-mail" : null,
+          "password" : null
+         }
       },
       "friends": {
           "list": [],

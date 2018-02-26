@@ -1,213 +1,230 @@
 // Main
+@media screen and (min-width: 200px) and (max-width: 640px) {
+  .profile-body{
+    height: auto !important;
+  }
+}
 
 section{
   display: table;
   padding: 10px 0;
   margin-top: 80px;
   position: relative;
-  .list-group-item{
-    overflow: hidden;
-    border-radius: 4px;
+}
+
+.media, .list-group{
+  cursor: pointer;
+  position: relative;
+  &:hover{
+    .action-container{
+      display: block;
+    }
   }
-  .media, .list-group{
-    cursor: pointer;
-    position: relative;
-    &:hover{
-      .action-container{
-        display: block;
+}
+
+.media{
+  .publication-date{
+    font-size: 10px;
+    text-align: right;
+  }
+  .media-left{
+    a{
+      img{
+        &.media-object{
+          max-width: 64px;
+          max-height: 64px;
+        }
       }
     }
   }
-  .media{
-    .publication-date{
-      font-size: 10px;
-      text-align: right;
-    }
+}
+
+.recommandations{
+  height: 100vh !important;
+}
+.list-group-item{
+  overflow: hidden;
+  border-radius: 4px;
+}
+.subscribe-form{
+  width: 500px;
+  background: #fff;
+  margin: 0 auto;
+  @extend .second-shadow;
+  overflow: hidden;
+  .form-header{
+    margin-bottom: 15px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background: $color-grey-l;
   }
-  .subscribe-form{
-    width: 500px;
-    background: #fff;
+}
+.subscribe-bottom{
+  text-align: center;
+}
+.form-group{
+  margin: 0 0 15px !important;
+  div[class=col-sm-10]{
+    float: none;
     margin: 0 auto;
-    @extend .second-shadow;
-    overflow: hidden;
-    .form-header{
-      margin-bottom: 15px;
-      border-bottom: solid 1px rgba(0, 0, 0, 0.1);
-      padding: 10px;
-      background: $color-grey-l;
+  }
+}
+.basic-style{
+  background: #fff;
+  padding: 20px;
+}
+.action-container{
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+  display: none;
+  .target-action{
+    li{
+      display: inline-block;
     }
   }
-  .subscribe-bottom{
-    text-align: center;
+  &.float-right{
+    float: right;
   }
-  .form-group{
-    margin: 0 0 15px !important;
-    div[class=col-sm-10]{
-      float: none;
-      margin: 0 auto;
-    }
-  }
-  .basic-style{
-    background: #fff;
-    padding: 20px;
-  }
-  .action-container{
-    position: absolute;
-    bottom: 10px;
-    right: 5px;
-    display: none;
-    .target-action{
-      li{
-        display: inline-block;
-      }
-    }
-    &.float-right{
-      float: right;
-    }
+  @extend .clear-fix;
+}
+// Profile
+.profil-main{
+  margin-bottom: 100px;
+  .profile-header{
+    border-top: solid 4px $custum-primary-color;
     @extend .clear-fix;
-  }
-  // Profile
-  .profil-main{
-    margin-bottom: 100px;
-    .profile-header{
-      border-top: solid 4px $custum-primary-color;
-      @extend .clear-fix;
-      .gravatar{
-        .content{
-          text-align: center;
-          img{
-            width: 120px;
-            border-radius: 50%;
-          }
-          .profile-infos{
-            font-size: 28px;
-            display: inline-block;
-            margin: 0 5px;
-            font-weight: bold;
-            padding: 5px;
-            border-radius: 8px;
-            border: solid 1px rgba(0,0,0,.01);
-            background: #fff;
-            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
-            span{
-              font-weight: lighter;
-            }
-          }
+    .gravatar{
+      .content{
+        text-align: center;
+        img{
+          max-width: 200px;
+          max-height: 200px;
         }
-      }
-    }
-    .profile-body{
-      background: #fff;
-      border-bottom: solid 4px $custum-primary-color;
-      height: 100vh;
-      @extend .clear-fix;
-      color: $color-text-default;
-      aside{
-        max-height: 1200px;
-        overflow-y: scroll;
-        position: relative;
-        height: 100%;
-        .aside-body{
-          margin-top: 35px;
-          >div{
-            &:not(:last-child){
-              padding-bottom: 10px;
-              border-bottom: solid 1px rgba(0,0,0,0.1);
-            }
-          }
-          .media{
-            &:hover{
-              background: #F5F5F5;
-            }
-          }
-          .card{
-            cursor: pointer;
-            background: #fff;
-            margin-top: 35px;
-            width: 100%;
-            border-radius: 4px;
-            overflow: hidden;
-            border: none !important;
-            @extend .second-shadow;
-            transition: all 0.1s ease-in-out;
-            span{
-              &.ico{
-                padding: 20px;
-                width: 100%;
-                display: block;
-                text-align: center;
-                span{
-                  padding: 40px 0;
-                  color: #fff;
-                  @extend .icon-shadow;
-                  font-size: 50px;
-                }
-              }
-            }
-            div{
-              &.card-body{
-                margin: 0 20px;
-                text-align: center;
-                a{
-                  &.btn{
-                    border: none;
-                  }
-                  &:hover{
-                    background: transparent;
-                  }
-                }
-              }
-            }
-            &:not(:last-child){
-              margin-bottom: 15px;
-              @extend .initial-border;
-            }
-            &:hover,
-            &:active ,
-            &:target ,
-            &:focus{
-              transform: scale(0.95);
-            }
-          }
-        }
-        .title{
-          position: absolute;
-          top:0;
-          left: 0;
-          text-align: left;
-          font-size: 18px;
+        .profile-infos{
+          font-size: 28px;
+          margin: 5px;
           font-weight: bold;
-          padding: 10px 8px;
-          width: 100%;
-          z-index: 1;
+          padding: 5px;
+          border-radius: 8px;
+          span{
+            font-weight: lighter;
+          }
         }
       }
     }
-    .profile-body{
-      margin: 0;
-      .card-title{
-        margin-bottom: 1px;
-        font-size: 29px;
+  }
+  .profile-body{
+    background: #fff;
+    border-bottom: solid 4px $custum-primary-color;
+    height: 100vh;
+    @extend .clear-fix;
+    color: $color-text-default;
+    aside{
+      max-height: 1200px;
+      overflow-y: scroll;
+      position: relative;
+      height: 100%;
+      .aside-body{
+        margin-top: 35px;
+        >div{
+          &:not(:last-child){
+            padding-bottom: 10px;
+            border-bottom: solid 1px rgba(0,0,0,0.1);
+          }
+        }
+        .media{
+          &:hover{
+            background: #F5F5F5;
+          }
+        }
+        .card{
+          cursor: pointer;
+          background: #fff;
+          margin-top: 35px;
+          width: 100%;
+          border-radius: 4px;
+          overflow: hidden;
+          border: none !important;
+          @extend .second-shadow;
+          transition: all 0.1s ease-in-out;
+          span{
+            &.ico{
+              padding: 20px;
+              width: 100%;
+              display: block;
+              text-align: center;
+              span{
+                padding: 40px 0;
+                color: #fff;
+                @extend .icon-shadow;
+                font-size: 50px;
+              }
+            }
+          }
+          div{
+            &.card-body{
+              margin: 0 20px;
+              text-align: center;
+              a{
+                &.btn{
+                  border: none;
+                }
+                &:hover{
+                  background: transparent;
+                }
+              }
+            }
+          }
+          &:not(:last-child){
+            margin-bottom: 15px;
+            @extend .initial-border;
+          }
+          &:hover,
+          &:active ,
+          &:target ,
+          &:focus{
+            transform: scale(0.95);
+          }
+        }
       }
-      .card-text{
-        max-width: 80%;
-        font-size: 12px;
-        margin: auto;
-      }
-      a{
-        margin-top: 5px;
+      .title{
+        position: absolute;
+        top:0;
+        left: 0;
+        text-align: left;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px 8px;
+        width: 100%;
+        z-index: 1;
       }
     }
   }
-  .profile-footer{
-    background: #fff;
-    margin: 50px 0;
-    padding: 20px;
-    @extend .second-shadow;
-    .btn-default{
-      border: solid;
-      color: initial;
+  .profile-body{
+    margin: 0;
+    .card-title{
+      margin-bottom: 1px;
+      font-size: 29px;
     }
+    .card-text{
+      max-width: 80%;
+      font-size: 12px;
+      margin: auto;
+    }
+    a{
+      margin-top: 5px;
+    }
+  }
+}
+.profile-footer{
+  background: #fff;
+  margin: 50px 0;
+  padding: 20px;
+  @extend .second-shadow;
+  .btn-default{
+    border: solid;
+    color: initial;
   }
 }
 
