@@ -50,7 +50,7 @@
                                     <a href="{{ item._id }}" class="btn btn-default modify"><span class="glyphicon glyphicon-pencil"></span></a>
                                 </li>
                                 <li>
-                                    <a href="{{ item._id }}" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <a ng-click="deletePost(item._id)" class="btn btn-danger white-color delete"><span class="glyphicon glyphicon-trash"></span></a>
                                 </li>
                             </ul>
                         </div>
@@ -66,6 +66,21 @@
                         <div class="media-body">
                             Vous n'avez rien publier sur votre fil.
                         </div>
+                    </div>
+
+                    <div class="profile-footer">
+                        <h2 class="ini-my-s">
+                            <span class="glyphicon glyphicon-question-sign"></span>
+                            Besoin d'aide ?
+                        </h2>
+                        <ul>
+                            <li class="ini-d-ib ini-p-0">
+                                <a ng-click="open({ template : 'add-post.tpl.html', size : '', title : 'Publier un nouvel article', class : 'ini-of'})" class="btn btn-lg btn-default">
+                                    Publier un article
+                                    <span class="glyphicon glyphicon-menu-right"></span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </aside>

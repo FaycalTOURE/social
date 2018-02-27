@@ -69,6 +69,7 @@ app.post('/upload', upload.single('file'), function(req,res,next){
     console.log('Uploade Successful file =>', req.file, 'body =>', req.body);
     // in db
     var collection = db.get().collection('user');
+
     var id = req.file.originalname;
     collection.update(
         { _id : db.makeObjectId(id)},
@@ -101,6 +102,7 @@ app.get('/user', function(req, res){
 
 app.get('/user/:id', function(req, res){
     var collection = db.get().collection('user');
+
     var id = req.params.id;
 
     collection.find({ _id : db.makeObjectId(id) }).toArray(function(err, data) {
@@ -108,8 +110,11 @@ app.get('/user/:id', function(req, res){
     });
 });
 
+// Simple Quick Add (admin)
+
 app.get('/user/:id/friends/add/:f_id', function(req, res){
     var collection = db.get().collection('user');
+
     var id = req.params.id,
         f_id = req.params.f_id;
 
@@ -117,7 +122,58 @@ app.get('/user/:id/friends/add/:f_id', function(req, res){
         { _id : db.makeObjectId(id)},
         { $addToSet: { 'friends.list' : f_id } }
     );
+});
 
+// add process
+
+app.get('/user/:id/friends/addProcess/:f_id', function(req, res){
+    var collection = db.get().collection('user');
+
+    var id = req.params.id,
+        f_id = req.params.f_id;
+
+    collection.update(
+        { _id : db.makeObjectId(id)},
+        { $addToSet: { 'friends.addingProcess' : f_id } }
+    );
+
+    collection.update(
+        { _id : db.makeObjectId(f_id)},
+        { $addToSet: { 'friends.friendDemands' : id } }
+    );
+});
+
+// add
+
+app.get('/user/:id/friends/addFriend/:f_id', function(req, res){
+    var collection = db.get().collection('user');
+
+    var id = req.params.id,
+        f_id = req.params.f_id;
+
+    // Add Friends list
+
+    collection.update(
+        { _id : db.makeObjectId(id)},
+        { $addToSet: { 'friends.list' : f_id } }
+    );
+
+    collection.update(
+        { _id : db.makeObjectId(f_id)},
+        { $addToSet: { 'friends.list' : id } }
+    );
+
+    // delete Process
+
+    collection.update(
+        { _id : db.makeObjectId(id)},
+        { $pull : { 'friends.friendDemands' : f_id }}
+    );
+
+    collection.update(
+        { _id : db.makeObjectId(f_id)},
+        { $pull : { 'friends.addingProcess' : id }}
+    );
 });
 
 app.get('/user/friend/:id', function(req, res){
@@ -191,6 +247,25 @@ app.get('/user/publish/:id', function(req, res){
     });
 });
 
+app.post('/user/:id/publish/add', function(req, res){
+    var collection = db.get().collection('publish');
+    var currentPost = req.body.clientPost;
+    var id = req.params.id;
+
+    collection.insert(
+        { publish :
+            { title : currentPost.title,
+              content : currentPost.content ,
+              logs : {
+                from : id,
+                sendAt : new Date()
+              }
+            }
+        });
+
+    res.json({ status : 200});
+});
+
 // RECOMMANDATION
 
 app.get('/user/recommandation/:id', function(req, res){
@@ -241,6 +316,23 @@ app.get('/user/:id/friends/delete/:f_id', function(req, res){
         { $pull : { 'friends.list' : f_id }}
     );
 
+});
+
+app.get('/user/delete/:id', function(req, res){
+    var collection = db.get().collection('user');
+    var id = req.params.id;
+
+    collection.remove(
+        { _id : db.makeObjectId(id)}
+    );
+});
+
+app.get('/user/publish/delete/:id', function(req, res){
+    var collection = db.get().collection('publish');
+    var id = req.params.id;
+    collection.remove(
+        { _id : db.makeObjectId(id)}
+    );
 });
 
 app.get('user/delete/message/:id', function(req, res){

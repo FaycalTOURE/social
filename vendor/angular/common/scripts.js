@@ -28,7 +28,14 @@ var app  = angular.module('app', [
         })
         .state('publications', {
             url : '/publications',
-            templateUrl : './vendor/app/view/account/publications/home.html'
+            templateUrl : './vendor/app/view/account/publications/home.html',
+            controller : function ($scope, $http, $rootScope, $location) {
+                $scope.deletePost = function (_id) {
+                    $http
+                        .get('/user/publish/delete/'+_id);
+                    $location.path('/profile');
+                };
+            }
         })
         .state('wall', {
             url : '/wall',
@@ -41,24 +48,12 @@ var app  = angular.module('app', [
         .state('friends', {
             url : '/friends',
             templateUrl : './vendor/app/view/account/friends/home.html',
-            controller : function ($scope, $timeout, getUserinfos) {
-                $scope.allUsers = [];
-                $scope.user = {
-                    loadUsers : function () {
-                        var loadall = function () {
-                            getUserinfos.all()
-                                .then(function (response) {
-                                    for(var i = 0; i < response.data.length; i++){
-                                        $scope.allUsers.push(response.data[i]);
-                                    }
-                                });
-                        };
-                        $timeout(loadall, 500);
-                        return this;
-                    }
+            controller : function ($scope, $http, $rootScope, $location) {
+                $scope.deleteUser = function (_id) {
+                    $http
+                        .get('/user/'+ $rootScope.userId +'/friends/delete/'+_id);
+                    $location.path('/friends');
                 };
-                $scope.user.loadUsers();
-                console.log('n n n n n n ', $scope.allUsers);
             }
         })
         .state('friend', {
@@ -235,7 +230,12 @@ var app  = angular.module('app', [
             );
         $templateCache.
             put('add-friend.tpl.html',
-            '<div class="media" ng-repeat="item in allUsers">'
+             '<div class="alert alert-info" role="alert">'
+                + '<a>'
+                    + 'Ami(e)s non ajouté(s)' + ' <span class="badge">{{ allUsers.length }}</span>'
+                + '</a>'
+            + '</div>'
+            + '<div class="media" ng-repeat="item in allUsers track by $index">'
                 +'<div class="media-left">'
                     +'<a href="#">'
                         +'<img class="media-object" ng-src="public/assets/user/{{ item.admin.avatar.filename }}" src="https://s-media-cache-ak0.pinimg.com/originals/ca/14/3a/ca143acfbafaa5762c839eba433822f1.png" alt="...">'
@@ -245,20 +245,40 @@ var app  = angular.module('app', [
                     +'<h4 class="media-heading">{{ item.user.firstName }}</h4>'
                     +'{{ item.user.lastName }}'
                 +'</div>'
-                +'<div class="action-container float-right">'
+                +'<div class="action-container not-hidden float-right">'
                 +'<ul class="target-action">'
                     +'<li>'
-                        +'<a href="{{ item._id }}" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>'
+                        +'<a ui-sref="friend({id:item._id})" class="btn btn-info delete white-color" ng-click="cancel()">Voir son profil <span class="glyphicon glyphicon-user"></span></a>'
                     +'</li>'
                     +'<li>'
-                        +'<a href="{{ item._id }}" class="btn btn-default share"><span class="glyphicon glyphicon-envelope"></span></a>'
-                    +'</li>'
-                    +'<li>'
-                        +'<a ui-sref="friend({id:item._id})" class="btn btn-default share">suivre <span class="glyphicon glyphicon-menu-right"></span></a>'
+                        +'<a ng-hide="item.friends.addingProcess.indexOf(userId) !== -1" ng-click="addFriend(item._id)" class="btn btn-success share white-color" ng-class="{disabled: data.all.friends.addingProcess.indexOf(item._id) !== -1}">Ajouter comme ami(e) <span class="glyphicon glyphicon-menu-right"></span></a>'
+                        +'<a ng-show="data.all.friends.friendDemands.indexOf(item._id) !== -1" ng-click="addFriendToFriends(item._id)" class="btn btn-danger share white-color" ng-class="{disabled: data.all.friends.addingProcess.indexOf(item._id) !== -1}">Accepter la demande <span class="glyphicon glyphicon-menu-right"></span></a>'
                     +'</li>'
                 +'</ul>'
                 +'</div>'
              +'</div>'
+            +'<div class="media-left" ng-show="allUsers.length === 0">'
+                +'<div class="media-body">'
+                    +'<h4 class="media-heading">Désolé !</h4>'
+                    +'Nous n\'avons trouver aucun ami.'
+                +'</div>'
+            +'</div>'
+            );
+        $templateCache.
+            put('add-post.tpl.html',
+                '<form name="postForm" class="form-horizontal" novalidate role="search" ng-submit="newPost(postForm.$valid, myPost)">'
+                    + '<div class="form-group">'
+                        + '<label>Titre</label>'
+                        + '<input type="text" name="title" class="form-control" placeholder="titre de l\'article" ng-model="myPost.title">'
+                    + '</div>'
+                    + '<div class="form-group">'
+                        + '<label>Contenu</label>'
+                        + '<textarea class="form-control" name="content" rows="5" ng-model="myPost.content"></textarea>'
+                    + '</div>'
+                    + '<div class="form-group">'
+                        + '<button type="submit" class="btn btn-default">Publier l\'article</button>'
+                    + '</div>'
+                + '</form>'
             );
     });
 

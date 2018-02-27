@@ -1,8 +1,8 @@
  [
    {
       "user": {
-          "firstName": "Jeremy",
-          "lastName": "Chaïoui",
+          "firstName": "Abou bakr",
+          "lastName": "Abdoulaye",
           "address": [
               {
                   "street": "rue jean richard bloch",
@@ -31,14 +31,11 @@
       },
       "friends": {
           "list": [],
-          "messages": [],
-          "recommandations": [],
           "addingProcess": [],
-          "deleted": []
+          "friendDemands": []
       },
       "messages": {
           "received": [],
-          "deleted": [],
           "sended": []
       },
       "publications": {

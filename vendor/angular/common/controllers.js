@@ -4,7 +4,7 @@
 
 app.controller('mainCtrl', function($scope, $rootScope, $uibModal, $log, $document, $window, $timeout, $q, $templateCache, $http){
 
-    $rootScope.userId = '5a8eee8cf0b30ec86430bc5f';
+    $rootScope.userId = '5a942630f0b30ec86431711a';
 
     $rootScope.data = {
         all : null
@@ -130,9 +130,65 @@ app.controller('mainCtrl', function($scope, $rootScope, $uibModal, $log, $docume
 
 // Modal
 
-app.controller('modalInstanceCtrl', function ($scope, $uibModalInstance, modal, ui) {
+
+app.controller('modalInstanceCtrl', function ($scope, $uibModalInstance, modal, ui, $http, $rootScope, $location) {
     $scope.ui  = ui;
     $scope.modal = modal;
+
+    // AddNew Friends
+
+    $scope.addFriend = function (_id) {
+        $http
+            .get('/user/'+ $rootScope.userId +'/friends/addProcess/'+_id);
+        $scope.cancel();
+    };
+
+    $scope.addFriendToFriends = function (_id) {
+        $http
+            .get('/user/'+ $rootScope.userId +'/friends/addFriend/'+_id);
+        $scope.cancel();
+    };
+
+    // Friends list
+
+    $scope.allUsers = [];
+    $http.get('/user').
+    then(function (response) {
+        // we stock ofs currents member and compare to all
+        var idToCompare = [$rootScope.userId];
+
+        for(var i = 0; i < $rootScope.data.all.friends.list.length; i++){
+            idToCompare.push($rootScope.data.all.friends.list[i]._id);
+        }
+
+        for(var i in response.data){
+            if(idToCompare.indexOf(response.data[i]._id) === -1){
+                $scope.allUsers.push(response.data[i]);
+            }
+        }
+    });
+
+    // New post
+
+    $scope.newPost = function (condition, post) {
+        if(condition && post.title !== null && post.content !== null){
+            $scope.currentPost = angular.copy(post);
+            var req = {
+                method: 'POST',
+                url: '/user/'+$scope.userId +'/publish/add',
+                data: { clientPost: $scope.currentPost }
+            };
+            $http(req).then(function successCallback(response) {
+                var data = response.data;
+                if(data.status === 200){
+                    $location.path("/profile");
+                    $scope.cancel();
+                }
+            });
+        }
+    };
+
+    // Close or calcel
 
     $scope.ok = function () {
         $uibModalInstance.close();

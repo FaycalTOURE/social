@@ -37,6 +37,10 @@ section{
       }
     }
   }
+  &:not(:first-child){
+    padding-top: 10px;
+    border-top: solid 1px rgba(0,0,0,0.1) !important;
+  }
 }
 
 .recommandations{
@@ -78,6 +82,9 @@ section{
   bottom: 10px;
   right: 5px;
   display: none;
+  &.not-hidden{
+    display: block;
+  }
   .target-action{
     li{
       display: inline-block;

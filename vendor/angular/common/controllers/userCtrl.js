@@ -1,4 +1,5 @@
 app.controller('userCtrl', function ($scope, $http, $timeout, $rootScope, getUserinfos) {
+
     $scope.userId = $rootScope.userId;
     $scope.data = {
         all : null
@@ -104,6 +105,5 @@ app.controller('userCtrl', function ($scope, $http, $timeout, $rootScope, getUse
             return this;
         }
     };
-
     $scope.user.user().publish().recommandation().message().friend();
 });

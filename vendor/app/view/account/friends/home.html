@@ -33,6 +33,9 @@
                     Liste des amis
                 </div>
                 <div class="aside-body">
+                    <a>
+                        Nombre d'ami(e)s <span class="badge">{{ data.all.friends.list.length }}</span>
+                    </a>
                     <div class="media" ng-repeat="item in data.all.friends.list">
                         <div class="media-left">
                             <a href="#">
@@ -46,7 +49,7 @@
                         <div class="action-container float-right">
                             <ul class="target-action">
                                 <li>
-                                    <a href="{{ item._id }}" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <a ng-click="deleteUser(item._id)" class="btn btn-danger white-color delete"><span class="glyphicon glyphicon-trash"></span></a>
                                 </li>
                                 <li>
                                     <a href="{{ item._id }}" class="btn btn-default share"><span class="glyphicon glyphicon-envelope"></span></a>
@@ -62,6 +65,21 @@
                         <div class="media-body">
                             Vous n'avez pas encore d'ami.
                         </div>
+                    </div>
+
+                    <div class="profile-footer">
+                        <h2 class="ini-my-s">
+                            <span class="glyphicon glyphicon-question-sign"></span>
+                            Besoin d'aide ?
+                        </h2>
+                        <ul>
+                            <li class="ini-d-ib ini-p-0">
+                                <a ng-click="open({ template : 'add-friend.tpl.html', size : '', title : 'Ajouter un ami', class : 'ini-of'})" class="btn btn-lg btn-default">
+                                    Ajouter un ami(e)
+                                    <span class="glyphicon glyphicon-menu-right"></span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </aside>
@@ -101,32 +119,6 @@
                 </div>
             </aside>
         </div>
-
-            <div class="profile-footer">
-                <h2 class="ini-my-s">
-                    Actions
-                </h2>
-                <ul>
-                    <li class="ini-d-ib ini-p-0">
-                        <a ng-click="open({ template : 'add-friend.tpl.html', size : '', title : 'Ajouter un ami', class : 'ini-of'})" class="btn btn-lg btn-default">
-                            Ajouter ami hors réseau
-                            <span class="glyphicon glyphicon-menu-right"></span>
-                        </a>
-                    </li>
-                    <li class="ini-d-ib">
-                        <a href="#" class="btn btn-lg btn-default">
-                            Suggérer un ami
-                            <span class="glyphicon glyphicon-menu-right"></span>
-                        </a>
-                    </li>
-                    <li class="ini-d-ib">
-                        <a href="#" class="btn btn-lg btn-default">
-                            Démarer un tchat
-                             <span class="glyphicon glyphicon-comment"></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
 
         </div>
 </section>
