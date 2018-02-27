@@ -4,7 +4,7 @@
 
 app.controller('mainCtrl', function($scope, $rootScope, $uibModal, $log, $document, $window, $timeout, $q, $templateCache, $http){
 
-    $rootScope.userId = '5a942630f0b30ec86431711a';
+    $rootScope.userId = '5a8eee8cf0b30ec86430bc60';
 
     $rootScope.data = {
         all : null
@@ -141,12 +141,14 @@ app.controller('modalInstanceCtrl', function ($scope, $uibModalInstance, modal, 
         $http
             .get('/user/'+ $rootScope.userId +'/friends/addProcess/'+_id);
         $scope.cancel();
+        $location.path('/profile');
     };
 
     $scope.addFriendToFriends = function (_id) {
         $http
             .get('/user/'+ $rootScope.userId +'/friends/addFriend/'+_id);
         $scope.cancel();
+        $location.path('/profile');
     };
 
     // Friends list

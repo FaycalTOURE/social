@@ -39,7 +39,7 @@
                     <div class="media" ng-repeat="item in data.all.friends.list">
                         <div class="media-left">
                             <a href="#">
-                                <img class="media-object" ng-src="public/assets/user/{{ item.admin.avatar.filename }}" src="https://s-media-cache-ak0.pinimg.com/originals/ca/14/3a/ca143acfbafaa5762c839eba433822f1.png" alt="...">
+                                <img class="media-object" ng-src="{{item.admin.avatar.filename ? 'public/assets/user/' + item.admin.avatar.filename : 'http://identicon.org?t='+item.user.lastName+'&s=256' }}" alt="...">
                             </a>
                         </div>
                         <div class="media-body">
@@ -70,7 +70,7 @@
                     <div class="profile-footer">
                         <h2 class="ini-my-s">
                             <span class="glyphicon glyphicon-question-sign"></span>
-                            Besoin d'aide ?
+                            Besoin d'aide
                         </h2>
                         <ul>
                             <li class="ini-d-ib ini-p-0">

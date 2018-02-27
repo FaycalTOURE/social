@@ -24,7 +24,29 @@ var app  = angular.module('app', [
         })
         .state('messages', {
             url : '/messages',
-            templateUrl : './vendor/app/view/account/messages/home.html'
+            templateUrl : './vendor/app/view/account/messages/home.html',
+            controller : function ($scope, $http, $rootScope, $location) {
+
+                // Return message infos
+
+                $scope.messageReceiveInfos = function (_id) {
+
+                    for(var index in $rootScope.data.all.friends.list){
+                        if($rootScope.data.all.friends.list[index]._id === _id){
+                            return $rootScope.data.all.friends.list[index];
+                        }
+                    }
+                };
+
+                // Delete Message
+
+                $scope.deleteMessage = function (_id) {
+                    console.log(_id);
+                    $http
+                        .get('/user/message/delete/'+_id);
+                    $location.path('/profile');
+                };
+            }
         })
         .state('publications', {
             url : '/publications',
@@ -52,7 +74,7 @@ var app  = angular.module('app', [
                 $scope.deleteUser = function (_id) {
                     $http
                         .get('/user/'+ $rootScope.userId +'/friends/delete/'+_id);
-                    $location.path('/friends');
+                    $location.path('/profile');
                 };
             }
         })
@@ -76,7 +98,7 @@ var app  = angular.module('app', [
                                     $scope.data.all = response.data[0];
                                     $rootScope.data.all = response.data[0];
                                     console.log($scope.data.all, $scope.data.all, $scope.data.all);
-                                    $scope.avatar = $scope.data.all.hasOwnProperty('admin') ? 'public/assets/user/' + $scope.data.all.admin.avatar.filename : 'https://s-media-cache-ak0.pinimg.com/originals/ca/14/3a/ca143acfbafaa5762c839eba433822f1.png';
+                                    $scope.avatar = $scope.data.all.hasOwnProperty('admin') ? 'public/assets/user/' + $rootScope.data.all.admin.avatar.filename : 'http://identicon.org?t='+$rootScope.data.all.user.lastName +'&s=256';
                                 });
                         };
                         $timeout(loadUser, 0);
@@ -194,7 +216,7 @@ var app  = angular.module('app', [
         .setCookieName("__loginState");
 
     $urlRouterProvider
-        .otherwise('/')
+        .otherwise('/profile')
         .when('', '/');
     })
     .run(function($templateCache) {
@@ -238,7 +260,7 @@ var app  = angular.module('app', [
             + '<div class="media" ng-repeat="item in allUsers track by $index">'
                 +'<div class="media-left">'
                     +'<a href="#">'
-                        +'<img class="media-object" ng-src="public/assets/user/{{ item.admin.avatar.filename }}" src="https://s-media-cache-ak0.pinimg.com/originals/ca/14/3a/ca143acfbafaa5762c839eba433822f1.png" alt="...">'
+                        +'<img class="media-object" ng-src="{{item.admin.avatar.filename ? \'public/assets/user/\' + item.admin.avatar.filename : \'http://identicon.org?t=\'+item.user.lastName+\'&s=256\' }}" alt="...">\n'
                     +'</a>'
                 +'</div>'
                 +'<div class="media-body">'

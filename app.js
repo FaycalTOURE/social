@@ -316,6 +316,11 @@ app.get('/user/:id/friends/delete/:f_id', function(req, res){
         { $pull : { 'friends.list' : f_id }}
     );
 
+    collection.update(
+        { _id : db.makeObjectId(f_id)},
+        { $pull : { 'friends.list' : id }}
+    );
+
 });
 
 app.get('/user/delete/:id', function(req, res){
@@ -335,8 +340,13 @@ app.get('/user/publish/delete/:id', function(req, res){
     );
 });
 
-app.get('user/delete/message/:id', function(req, res){
+app.get('/user/message/delete/:id', function(req, res){
+    var collection = db.get().collection('message');
+    var id = req.params.id;
 
+    collection.remove(
+        { _id : db.makeObjectId(id)}
+    );
 });
 
 app.get('user/delete/friend/:id', function(req, res){

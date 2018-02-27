@@ -11,6 +11,15 @@
                     <p class="profile-infos">{{  data.all.user.firstName || 'Name' }},
                         <span>{{ data.all.user.lastName || 'Prénom'}}</span>
                     </p>
+                    <h6>{{ data.all.user.address[0].street + ', ' + data.all.user.address[0].zipCode + ' (' + data.all.user.address[0].city + ' / ' + data.all.user.address[0].country + ')'}}</h6>
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default">
+                                #ID
+                            </button>
+                        </div>
+                        <input type="text" class="form-control" aria-label="..." value="{{ data.all._id }}">
+                    </div>
                 </div>
             </div>
         </div>
@@ -49,7 +58,7 @@
                     Publications de {{  data.all.user.lastName }}
                 </div>
                 <div class="aside-body">
-                    <div class="media" ng-repeat="item in data.all.publications.list">
+                    <div class="media well well-sm" ng-repeat="item in data.all.publications.list">
                         <div class="media-left">
                             <a href="#">
                                 <span class="glyphicon glyphicon-pencil"></span>

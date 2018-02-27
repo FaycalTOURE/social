@@ -17,7 +17,7 @@ app.controller('userCtrl', function ($scope, $http, $timeout, $rootScope, getUse
                                 console.log('user', response);
                                 $scope.data.all = response.data[0];
                                 $rootScope.data.all = response.data[0];
-                                $scope.avatar = $scope.data.all.hasOwnProperty('admin') ? 'public/assets/user/' + $rootScope.data.all.admin.avatar.filename : 'https://s-media-cache-ak0.pinimg.com/originals/ca/14/3a/ca143acfbafaa5762c839eba433822f1.png';
+                                $scope.avatar = $scope.data.all.hasOwnProperty('admin') ? 'public/assets/user/' + $rootScope.data.all.admin.avatar.filename : 'http://identicon.org?t='+$rootScope.data.all.user.lastName +'&s=256';
                             });
             };
             $timeout(loadUser, 0);
@@ -91,12 +91,14 @@ app.controller('userCtrl', function ($scope, $http, $timeout, $rootScope, getUse
                     $http.get('/user/' + $scope.data.all.friends.list[i]).
                           then(function (response) {
                             console.log('friends', response);
-                              if(response.data[0].hasOwnProperty('_id')){
+                            for (var index in response.data){
+                              if(response.data[index].hasOwnProperty('_id')){
                                     if($scope.data.all.friends.list.indexOf($scope.data.all.friends.list[i]) !== -1){
                                         $scope.data.all.friends.list.splice(0, $scope.data.all.friends.list.indexOf($scope.data.all.friends.list[i]));
                                     }
-                                    $scope.data.all.friends.list.push(response.data[0]);
+                                    $scope.data.all.friends.list.push(response.data[index]);
                               }
+                            }
                         });
                 }
                 console.log('All =>  Datas =>', $scope.data.all);

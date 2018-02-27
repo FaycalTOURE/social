@@ -32,40 +32,127 @@
                 <div class="title">
                     Mes messages
                 </div>
-                <div class="aside-body" ng-init="allMessages = data.all.messages.received.concat(data.all.messages.sended)">
 
-                    <div class="media" ng-repeat="item in allMessages">
-                        <div class="media-left">
-                            <a href="#">
-                                <span class="glyphicon glyphicon-envelope"></span>
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">{{ item.message.title }}</h4>
-                            {{ item.message.content }}
-                        </div>
-                        <div class="action-container float-right">
-                            <ul class="target-action">
-                                <li>
-                                    <a href="{{ item._id }}" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
-                                </li>
-                                <li>
-                                    <a href="{{ item.message.logs.from }}" class="btn btn-default share"><span class="glyphicon glyphicon-share-alt"></span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="publication-date">
-                            {{ item.message.logs.sendAt }}
+                <div class="panel panel-default aside-body">
+                    <div class="panel-heading">Tous les messages</div>
+                    <div class="panel-body">
+                        <div class="" ng-init="allMessages = data.all.messages.received.concat(data.all.messages.sended)">
+
+                            <div class="media well well-sm" ng-repeat="item in allMessages" ng-init="senBY = messageReceiveInfos(item.message.logs.from)">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object" ng-src="{{senBY.admin.avatar.path}}" alt="">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">{{ item.message.title }}</h4>
+                                    {{ item.message.content }}
+                                </div>
+                                <div class="action-container float-right">
+                                    <ul class="target-action">
+                                        <li>
+                                            <a ng-click="deleteMessage(item._id)" class="btn btn-danger white-color delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ item.message.logs.from }}" class="btn btn-default share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="publication-date">
+                                    {{ senBY.user.firstName + ' ' + senBY.user.lastName + ' (' + item.message.logs.sendAt +')' }}
+                                </div>
+                            </div>
+
+                            <div class="media" ng-show="allMessages.length == 0">
+                                <div class="media-body">
+                                    Vous n'avez aucun message.
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-
-                    <div class="media" ng-show="allMessages.length == 0">
-                        <div class="media-body">
-                            Vous n'avez aucun message.
-                        </div>
-                    </div>
-
                 </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Messages réçus</div>
+                    <div class="panel-body">
+                        <div class="" ng-init="receivedMessages = data.all.messages.received">
+
+                            <div class="media well well-sm" ng-repeat="item in receivedMessages" ng-init="senBY = messageReceiveInfos(item.message.logs.from)">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object" ng-src="{{senBY.admin.avatar.path}}" alt="">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">{{ item.message.title }}</h4>
+                                    {{ item.message.content }}
+                                </div>
+                                <div class="action-container float-right">
+                                    <ul class="target-action">
+                                        <li>
+                                            <a ng-click="deleteMessage(item._id)" class="btn btn-danger white-color delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ item.message.logs.from }}" class="btn btn-default share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="publication-date">
+                                    {{ senBY.user.firstName + ' ' + senBY.user.lastName + ' (' + item.message.logs.sendAt +')' }}
+                                </div>
+                            </div>
+
+                            <div class="media" ng-show="receivedMessages.length == 0">
+                                <div class="media-body">
+                                    Vous n'avez aucun message.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Messages envoyés</div>
+                    <div class="panel-body">
+                        <div class="" ng-init="sendedMessages = data.all.messages.sended">
+
+                            <div class="media well well-sm" ng-repeat="item in sendedMessages" ng-init="senBY = messageReceiveInfos(item.message.logs.from)">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object" ng-src="{{senBY.admin.avatar.path}}" alt="">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">{{ item.message.title }}</h4>
+                                    {{ item.message.content }}
+                                </div>
+                                <div class="action-container float-right">
+                                    <ul class="target-action">
+                                        <li>
+                                            <a ng-click="deleteMessage(item._id)" class="btn btn-danger white-color delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ item.message.logs.from }}" class="btn btn-default share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="publication-date">
+                                    {{ senBY.user.firstName + ' ' + senBY.user.lastName + ' (' + item.message.logs.sendAt +')' }}
+                                </div>
+                            </div>
+
+                            <div class="media" ng-show="sendedMessages.length == 0">
+                                <div class="media-body">
+                                    Vous n'avez envoyer aucun message.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             </aside>
 
             <aside class="recommandations basic-style col-md-4 separate-shadow">
@@ -74,31 +161,30 @@
                 </div>
                 <div class="aside-body" ng-controller="TypeaheadMessageCtrl">
                     <div class="search">
-                        <!--<pre>Model: {{customPopupSelected | json}}</pre>-->
-                        <input type="text" ng-model="customPopupSelected" placeholder="Recherche par nom d'expéditeur" uib-typeahead="state as state.message.title for state in states" typeahead-popup-template-url="customPopupTemplate.html" class="form-control">
+                        <input type="text" ng-model="customPopupSelected" placeholder="Recherche titre" uib-typeahead="state as state.message.title for state in states" typeahead-popup-template-url="customPopupTemplate.html" class="form-control">
                     </div>
-                    <div class="media" ng-if="customPopupSelected">
+                    <div class="media well well-sm" ng-if="customPopupSelected">
                         <div class="media-left">
                             <a href="#">
-                                <span class="glyphicon glyphicon-pencil"></span>
+                                <img class="media-object" ng-src="{{messageReceiveInfos(customPopupSelected.message.logs.from).admin.avatar.path}}" alt="">
                             </a>
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">{{ customPopupSelected.message.title }}</h4>
                             {{ customPopupSelected.message.content }}
                         </div>
+                        <div class="publication-date">
+                            {{ messageReceiveInfos(customPopupSelected.message.logs.from).user.firstName + ' ' + messageReceiveInfos(customPopupSelected.message.logs.from).user.lastName + ' (' + customPopupSelected.message.logs.sendAt +')' }}
+                        </div>
                         <div class="action-container float-right">
                             <ul class="target-action">
                                 <li>
-                                    <a href="#" class="btn btn-default modify"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a ng-click="deleteMessage(customPopupSelected._id)" class="btn btn-danger white-color delete"><span class="glyphicon glyphicon-trash"></span></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <a href="{{ customPopupSelected.message.logs.from }}" class="btn btn-default share"><span class="glyphicon glyphicon-share-alt"></span></a>
                                 </li>
                             </ul>
-                        </div>
-                        <div class="publication-date">
-                            {{ customPopupSelected.message.logs.sendAt }}
                         </div>
                     </div>
                 </div>

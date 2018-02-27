@@ -10,7 +10,8 @@
                   "zipCode": "95100",
                   "country": "FRANCE"
               }
-          ],
+            ],
+          "sex" : "male",
           "options" : {
               "theme" : "user-men",
               "image" : null
