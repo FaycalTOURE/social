@@ -4,7 +4,7 @@
 
 app.controller('mainCtrl', function($scope, $rootScope, $uibModal, $log, $document, $window, $timeout, $q, $templateCache, $http){
 
-    $rootScope.userId = '5a8eee8cf0b30ec86430bc60';
+    $rootScope.userId = '';
 
     $rootScope.data = {
         all : null
@@ -131,7 +131,8 @@ app.controller('mainCtrl', function($scope, $rootScope, $uibModal, $log, $docume
 // Modal
 
 
-app.controller('modalInstanceCtrl', function ($scope, $uibModalInstance, modal, ui, $http, $rootScope, $location) {
+app.controller('modalInstanceCtrl', function ($scope, $uibModalInstance, modal, ui, $http, $rootScope, $location, $timeout) {
+    $scope.alertMessage = true;
     $scope.ui  = ui;
     $scope.modal = modal;
 
@@ -152,8 +153,8 @@ app.controller('modalInstanceCtrl', function ($scope, $uibModalInstance, modal, 
     };
 
     // Friends list
-
     $scope.allUsers = [];
+
     $http.get('/user').
     then(function (response) {
         // we stock ofs currents member and compare to all
@@ -190,7 +191,25 @@ app.controller('modalInstanceCtrl', function ($scope, $uibModalInstance, modal, 
         }
     };
 
-    // Close or calcel
+    // Create Account
+
+    $scope.createAccount = function (condition, post) {
+        if(condition && post.email !== null && post.password !== null){
+            $scope.currentPost = angular.copy(post);
+            var req = {
+                method: 'POST',
+                url: '/process',
+                data: { user: $scope.currentPost }
+            };
+            $http(req).then(function(response) {
+                var data = response.data;
+                $timeout(function () {
+                    $scope.alertMessage = true;
+                    $scope.cancel();
+                }, 300);
+            });
+        }
+    };
 
     $scope.ok = function () {
         $uibModalInstance.close();

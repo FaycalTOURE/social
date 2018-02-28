@@ -56,6 +56,15 @@ app.factory('getUserinfos', function ($http, $log, $q) {
                     deferred.reject($log.info('Erreur lors du charmgement de donnée.'));
                  });
            return deferred.promise;
+        },
+        userId: function (_id) {
+            $http.get('/user/' + _id)
+                .then(function(response){
+                    deferred.resolve(response || '- - -');
+                }, function(){
+                    deferred.reject($log.info('Erreur lors du charmgement de donnée.'));
+                });
+            return deferred.promise;
         }
     }
 });

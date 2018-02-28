@@ -1,17 +1,18 @@
  [
    {
       "user": {
-          "firstName": "Abou bakr",
-          "lastName": "Abdoulaye",
+          "firstName": "MEGANE",
+          "lastName": "Boris",
           "address": [
               {
-                  "street": "rue jean richard bloch",
-                  "city": "Argenteuil",
-                  "zipCode": "95100",
+                  "street": "rue de liège",
+                  "city": "Paris",
+                  "zipCode": "75009",
                   "country": "FRANCE"
               }
             ],
           "sex" : "male",
+          "age" : 19,
           "options" : {
               "theme" : "user-men",
               "image" : null
@@ -26,8 +27,8 @@
             "avatar" : null
           },
          "session" : {
-          "e-mail" : null,
-          "password" : null
+          "e-mail" : "bobo@gmail.com",
+          "password" : "grandmainson"
          }
       },
       "friends": {

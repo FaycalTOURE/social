@@ -36,7 +36,7 @@
                         </span>
                         <div class="card-body">
                             <h5 class="card-title">Amis</h5>
-                            <a ui-sref="friends" class="btn btn-default btn-lg">Gérer {{  data.all.user.lastName }}</a>
+                            <a ng-click="open({ template : 'remove-friend.tpl.html', size : '', title : 'Supprimer un ami', class : 'ini-of'})" class="btn btn-default btn-lg">Gérer {{  data.all.user.lastName }}</a>
                         </div>
                     </div>
 

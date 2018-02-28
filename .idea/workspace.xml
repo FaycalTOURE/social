@@ -4,20 +4,15 @@
     <list default="true" id="d649bce5-9bc9-41ce-8c6b-284811d4a8ed" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/all.min.css" afterPath="$PROJECT_DIR$/public/css/all.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/json/message.json" afterPath="$PROJECT_DIR$/public/json/message.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/json/user.json" afterPath="$PROJECT_DIR$/public/json/user.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scss/_men.scss" afterPath="$PROJECT_DIR$/public/scss/_men.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scss/_women.scss" afterPath="$PROJECT_DIR$/public/scss/_women.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/angular/common/controllers.js" afterPath="$PROJECT_DIR$/vendor/angular/common/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/angular/common/controllers/userCtrl.js" afterPath="$PROJECT_DIR$/vendor/angular/common/controllers/userCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/angular/common/scripts.js" afterPath="$PROJECT_DIR$/vendor/angular/common/scripts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/angular/common/services.js" afterPath="$PROJECT_DIR$/vendor/angular/common/services.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/account/friends/home.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/friends/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/account/insigths/footer.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/insigths/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/account/messages/home.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/messages/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/account/insigths/header.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/insigths/header.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/account/profile/friend.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/profile/friend.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/account/profile/home.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/profile/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/account/publications/home.html" afterPath="$PROJECT_DIR$/vendor/app/view/account/publications/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/app/view/main.html" afterPath="$PROJECT_DIR$/vendor/app/view/main.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,80 +26,31 @@
       <file leaf-file-name="scripts.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/angular/common/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="216" column="0" lean-forward="true" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
+            <state relative-caret-position="285">
+              <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
               <folding>
-                <marker date="1519765621674" expanded="true" signature="10394:10409" ph="..." />
+                <marker date="1519782362852" expanded="true" signature="11344:11359" ph="..." />
+                <marker date="1519782362852" expanded="true" signature="19824:19843" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/app/view/account/insigths/footer.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+            <state relative-caret-position="309">
+              <caret line="28" column="53" lean-forward="true" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/app/view/account/profile/home.html">
+      <file leaf-file-name="directives.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/angular/common/directives.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="32" column="40" lean-forward="false" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/app/view/account/messages/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/angular/common/controllers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="223" column="102" lean-forward="true" selection-start-line="223" selection-start-column="102" selection-end-line="223" selection-end-column="102" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="message.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/json/message.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/app/view/account/publications/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="73" column="41" lean-forward="true" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/app/view/account/friends/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="81" column="29" lean-forward="true" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+            <state relative-caret-position="174">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -113,18 +59,70 @@
       <file leaf-file-name="userCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/angular/common/controllers/userCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+            <state relative-caret-position="165">
+              <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_women.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/scss/_women.scss">
+      <file leaf-file-name="user.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/json/user.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="35" />
+            <state relative-caret-position="345">
+              <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/app/view/main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="services.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/angular/common/services.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="59" column="32" lean-forward="false" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/angular/common/controllers.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="217" column="32" lean-forward="false" selection-start-line="217" selection-start-column="32" selection-end-line="217" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="511">
+              <caret line="88" column="42" lean-forward="false" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vendor/app/view/account/insigths/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -142,11 +140,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Promise</find>
-      <find>5a8ef098f0b30ec86430bce5</find>
-      <find>ist-menu</find>
-      <find>separa</find>
-      <find>recomm</find>
       <find>separate</find>
       <find>card</find>
       <find>last-</find>
@@ -170,8 +163,13 @@
       <find>deleteUser</find>
       <find>separate-</find>
       <find>shadow</find>
-      <find>$scope.avatar</find>
+      <find>ui-sref</find>
+      <find>/profile</find>
       <find>senBY.admin.avatar.path</find>
+      <find>$scope.avatar</find>
+      <find>util</find>
+      <find>lastName</find>
+      <find>5a8eee8cf0b30ec86430bc5f</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -189,7 +187,6 @@
         <option value="$PROJECT_DIR$/vendor/app/view/insigths/footer.html" />
         <option value="$PROJECT_DIR$/vendor/app/view/main/main.html" />
         <option value="$PROJECT_DIR$/vendor/app/view/account/main.html" />
-        <option value="$PROJECT_DIR$/vendor/app/view/main.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/vendor/app/view/account/profile/profile.html" />
         <option value="$PROJECT_DIR$/bower.json" />
@@ -215,27 +212,28 @@
         <option value="$PROJECT_DIR$/public/json/recommandation.json" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/vendor/angular/common/userCtrl.js" />
-        <option value="$PROJECT_DIR$/vendor/app/view/account/insigths/header.html" />
         <option value="$PROJECT_DIR$/vendor/angular/common/directives.js" />
         <option value="$PROJECT_DIR$/public/scss/_shadow.scss" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/public/scss/_environnementAbstract.scss" />
         <option value="$PROJECT_DIR$/public/scss/_init.scss" />
-        <option value="$PROJECT_DIR$/vendor/angular/common/services.js" />
-        <option value="$PROJECT_DIR$/vendor/app/view/account/profile/friend.html" />
         <option value="$PROJECT_DIR$/vendor/angular/common/controllers/userCtrl.js" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/public/json/user.json" />
+        <option value="$PROJECT_DIR$/public/scss/_women.scss" />
+        <option value="$PROJECT_DIR$/public/scss/_men.scss" />
+        <option value="$PROJECT_DIR$/vendor/app/view/account/messages/home.html" />
+        <option value="$PROJECT_DIR$/vendor/app/view/account/insigths/footer.html" />
+        <option value="$PROJECT_DIR$/public/json/message.json" />
         <option value="$PROJECT_DIR$/vendor/app/view/account/profile/home.html" />
         <option value="$PROJECT_DIR$/vendor/app/view/account/publications/home.html" />
         <option value="$PROJECT_DIR$/vendor/app/view/account/friends/home.html" />
-        <option value="$PROJECT_DIR$/public/scss/_women.scss" />
-        <option value="$PROJECT_DIR$/public/scss/_men.scss" />
+        <option value="$PROJECT_DIR$/vendor/app/view/account/profile/friend.html" />
+        <option value="$PROJECT_DIR$/vendor/angular/common/services.js" />
+        <option value="$PROJECT_DIR$/public/json/user.json" />
+        <option value="$PROJECT_DIR$/vendor/app/view/main.html" />
         <option value="$PROJECT_DIR$/vendor/angular/common/controllers.js" />
-        <option value="$PROJECT_DIR$/vendor/app/view/account/messages/home.html" />
         <option value="$PROJECT_DIR$/vendor/angular/common/scripts.js" />
-        <option value="$PROJECT_DIR$/vendor/app/view/account/insigths/footer.html" />
-        <option value="$PROJECT_DIR$/public/json/message.json" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/vendor/app/view/account/insigths/header.html" />
       </list>
     </option>
   </component>
@@ -507,12 +505,12 @@
       <option name="presentableId" value="Default" />
       <updated>1518028687361</updated>
       <workItem from="1518028688771" duration="128042000" />
-      <workItem from="1519296093045" duration="168067000" />
+      <workItem from="1519296093045" duration="181996000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="368689000" />
+    <option name="totallyTimeSpent" value="382618000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="94" y="53" width="1354" height="991" extended-state="0" />
@@ -604,13 +602,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/:" />
-    <entry file="file://$PROJECT_DIR$/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="31" column="22" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/helpersUtil.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -750,14 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/app/view/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/app/view/account/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -776,14 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/insigths/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/scss/_init.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="545">
@@ -792,66 +767,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/json/publish.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/angular/common/services.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="73" column="20" lean-forward="true" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/profile/friend.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/angular/common/directives.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="39" lean-forward="true" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3874">
-          <caret line="343" column="22" lean-forward="false" selection-start-line="343" selection-start-column="22" selection-end-line="343" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/json/user.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/friends/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="81" column="29" lean-forward="true" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -888,56 +807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/profile/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="32" column="40" lean-forward="false" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/angular/common/controllers/userCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/publications/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="73" column="41" lean-forward="true" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/angular/common/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="223" column="102" lean-forward="true" selection-start-line="223" selection-start-column="102" selection-end-line="223" selection-end-column="102" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/messages/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/angular/common/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="216" column="0" lean-forward="true" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
-          <folding>
-            <marker date="1519765621674" expanded="true" signature="10394:10409" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/app/view/account/insigths/footer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -948,8 +817,141 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/json/message.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="32" />
+        <state relative-caret-position="150">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/profile/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1726">
+          <caret line="131" column="30" lean-forward="true" selection-start-line="131" selection-start-column="30" selection-end-line="131" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/friends/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="38" column="71" lean-forward="true" selection-start-line="38" selection-start-column="71" selection-end-line="38" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/profile/friend.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/publications/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="933">
+          <caret line="106" column="66" lean-forward="false" selection-start-line="106" selection-start-column="66" selection-end-line="106" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/messages/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="156" column="0" lean-forward="true" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="22" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/angular/common/directives.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/json/user.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/angular/common/controllers/userCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/angular/common/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="59" column="32" lean-forward="false" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="28" column="53" lean-forward="true" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/app/view/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/angular/common/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="217" column="32" lean-forward="false" selection-start-line="217" selection-start-column="32" selection-end-line="217" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="88" column="42" lean-forward="false" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/angular/common/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding>
+            <marker date="1519782362852" expanded="true" signature="11344:11359" ph="..." />
+            <marker date="1519782362852" expanded="true" signature="19824:19843" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/app/view/account/insigths/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>

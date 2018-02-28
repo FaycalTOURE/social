@@ -80,8 +80,142 @@ app.post('/upload', upload.single('file'), function(req,res,next){
 
 // CONNECTION
 
-app.get('/connexion', function(req, res){
+app.get('/disconnect', function(req, res){
+    res.sendFile(__dirname + '/index.html');
+});
 
+
+app.post('/connexion', function(req, res){
+    var collection = db.get().collection('user');
+
+    var currentPost = req.body.client;
+
+    collection.find({ 'user.session.e-mail' : currentPost.email }).toArray(function(err, data) {
+        for(var i = 0; i < data.length; i++){
+
+            if(data[0].user.session['e-mail'] === currentPost.email
+                && data[0].user.session['password'] === currentPost.password){
+                res.json({ _id : data[0]._id });
+            }
+        }
+    });
+});
+
+app.post('/process', function(req, res){
+    var collection = db.get().collection('user');
+
+    var currentPost = req.body.user;
+
+    console.log('user', currentPost);
+
+    collection.find({ 'user.session.e-mail' : currentPost.email }).toArray(function(err, data) {
+        console.log('data shearche', data);
+        if(!data || data.length === 0){
+            collection.insert({
+                "user": {
+                    "firstName": currentPost.firstName,
+                    "lastName": currentPost.lastName,
+                    "address": [
+                        {
+                            "street": currentPost.street,
+                            "city": currentPost.city,
+                            "zipCode": currentPost.zipCode,
+                            "country": currentPost.country
+                        }
+                    ],
+                    "sex" : currentPost.sex,
+                    "age" : currentPost.age,
+                    "options" : {
+                        "theme" : currentPost.theme,
+                        "image" : null
+                    },
+                    "logs": {
+                        "status" : "disconnected",
+                        "membrerSince" : new Date(),
+                        "messagesCounter" : 0,
+                        "publicationsCounter" : 0
+                    },
+                    "admin" : {
+                        "avatar" : null
+                    },
+                    "session" : {
+                        "e-mail" : currentPost.email,
+                        "password" : currentPost.password
+                    }
+                },
+                "friends": {
+                    "list": [],
+                    "addingProcess": [],
+                    "friendDemands": []
+                },
+                "messages": {
+                    "received": [],
+                    "sended": []
+                },
+                "publications": {
+                    "list": []
+                }
+            });
+
+            res.json({ message : 'votre inscription à bien été pris en compte !'});
+        }
+        for(var i = 0; i < data.length; i++){
+            console.log('data compare', data[0].user.session['e-mail'], data[0]);
+            if(data[0].user.session['e-mail'] !== currentPost.email){
+                console.log('yesss', currentPost);
+                collection.insert({
+                    "user": {
+                        "firstName": currentPost.firstName,
+                        "lastName": currentPost.lastName,
+                        "address": [
+                            {
+                                "street": currentPost.street,
+                                "city": currentPost.city,
+                                "zipCode": currentPost.zipCode,
+                                "country": currentPost.country
+                            }
+                        ],
+                        "sex" : currentPost.sex,
+                        "age" : currentPost.age,
+                        "options" : {
+                            "theme" : currentPost.theme,
+                            "image" : null
+                        },
+                        "logs": {
+                            "status" : "disconnected",
+                            "membrerSince" : new Date(),
+                            "messagesCounter" : 0,
+                            "publicationsCounter" : 0
+                        },
+                        "admin" : {
+                            "avatar" : null
+                        },
+                        "session" : {
+                            "e-mail" : currentPost.email,
+                            "password" : currentPost.password
+                        }
+                    },
+                    "friends": {
+                        "list": [],
+                        "addingProcess": [],
+                        "friendDemands": []
+                    },
+                    "messages": {
+                        "received": [],
+                        "sended": []
+                    },
+                    "publications": {
+                        "list": []
+                    }
+                });
+
+                res.json({ message : 'votre inscription à bien été pris en compte !'});
+            }else{
+                console.log('nooooo', currentPost);
+                res.json({ message : 'une erreur est survenue'});
+            }
+        }
+    });
 });
 
 app.get('/disconnect', function(req, res){

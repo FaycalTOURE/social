@@ -107,10 +107,10 @@
                         <div class="action-container float-right">
                             <ul class="target-action">
                                 <li>
-                                    <a href="#" class="btn btn-default modify"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a href="{{ customPopupSelected._id }}" class="btn btn-default modify"><span class="glyphicon glyphicon-pencil"></span></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <a ng-click="deletePost(customPopupSelected._id)" class="btn btn-danger white-color delete"><span class="glyphicon glyphicon-trash"></span></a>
                                 </li>
                             </ul>
                         </div>

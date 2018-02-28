@@ -11,7 +11,30 @@ var app  = angular.module('app', [
     $stateProvider
         .state('index', {
             url : '/index',
-            templateUrl : './vendor/app/view/main.html'
+            templateUrl : './vendor/app/view/main.html',
+            controller : function ($scope, $location, $http, $rootScope, $timeout) {
+
+                // Connexion
+
+                $scope.connexion = function (condition, post) {
+                    if(condition && post.email !== null && post.password !== null){
+                        $scope.currentPost = angular.copy(post);
+                        var req = {
+                            method: 'POST',
+                            url: '/connexion',
+                            data: { client: $scope.currentPost }
+                        };
+                        $http(req).then(function(response) {
+                            var data = response.data;
+                            $timeout(function () {
+                                $rootScope.userId = data._id;
+                                $location.path("/profile");
+                            }, 300);
+                        });
+                    }
+                };
+
+            }
         })
         .state('account', {
             url : '/account',
@@ -82,7 +105,6 @@ var app  = angular.module('app', [
             url : '/friend/{id}',
             templateUrl : './vendor/app/view/account/profile/friend.html',
             controller : function ($stateParams, $rootScope, $scope, $timeout, $http) {
-
                 $scope.userId = $stateParams.id;
 
                 $scope.user = {
@@ -216,7 +238,7 @@ var app  = angular.module('app', [
         .setCookieName("__loginState");
 
     $urlRouterProvider
-        .otherwise('/profile')
+        .otherwise('/')
         .when('', '/');
     })
     .run(function($templateCache) {
@@ -257,7 +279,7 @@ var app  = angular.module('app', [
                     + 'Ami(e)s non ajouté(s)' + ' <span class="badge">{{ allUsers.length }}</span>'
                 + '</a>'
             + '</div>'
-            + '<div class="media" ng-repeat="item in allUsers track by $index">'
+            + '<div class="media well well-sm" ng-repeat="item in allUsers track by $index">'
                 +'<div class="media-left">'
                     +'<a href="#">'
                         +'<img class="media-object" ng-src="{{item.admin.avatar.filename ? \'public/assets/user/\' + item.admin.avatar.filename : \'http://identicon.org?t=\'+item.user.lastName+\'&s=256\' }}" alt="...">\n'
@@ -287,6 +309,33 @@ var app  = angular.module('app', [
             +'</div>'
             );
         $templateCache.
+        put('remove-friend.tpl.html',
+            '<div class="media well well-sm" ng-repeat="item in getSUer()">'
+                +'<div class="media-left">'
+                    +'<a href="#">'
+                        +'<img class="media-object" ng-src="{{item.admin.avatar.filename ? \'public/assets/user/\' + item.admin.avatar.filename : \'http://identicon.org?t=\'+item.user.lastName+\'&s=256\' }}" alt="...">\n'
+                    +'</a>'
+                +'</div>'
+                +'<div class="media-body">'
+                    +'<h4 class="media-heading">{{ item.user.firstName }}</h4>'
+                    +'{{ item.user.lastName }}'
+                +'</div>'
+                +'<div class="action-container not-hidden float-right">'
+                    +'<ul class="target-action">'
+                        +'<li>'
+                            +'<a ng-click="deleteUser(item._id)" class="btn btn-danger share white-color" ng-class="{disabled: data.all.friends.addingProcess.indexOf(item._id) !== -1}">Supprimer {{ item.user.lastName }}<span class="glyphicon glyphicon-menu-right"></span></a>'
+                        +'</li>'
+                    +'</ul>'
+                +'</div>'
+                +'<div class="media-left" ng-show="allUsers.length === 0">'
+                    +'<div class="media-body">'
+                        +'<h4 class="media-heading">Désolé !</h4>'
+                        +'Nous n\'avons trouver aucun ami.'
+                    +'</div>'
+                +'</div>'
+            +'</div>'
+        );
+        $templateCache.
             put('add-post.tpl.html',
                 '<form name="postForm" class="form-horizontal" novalidate role="search" ng-submit="newPost(postForm.$valid, myPost)">'
                     + '<div class="form-group">'
@@ -302,5 +351,77 @@ var app  = angular.module('app', [
                     + '</div>'
                 + '</form>'
             );
+        $templateCache.
+        put('create-account.tpl.html',
+           '<form name="subscribeForm" class="form-horizontal" ng-submit="createAccount(subscribeForm.$valid, user)" method="post">'
+            +'<div class="rendered-form">'
+
+                +'<div class="form-group">'
+                    +'<label for="email" class="fb-text-label" ng-required>E-mail</label>'
+                    +'<input type="text" class="form-control" name="email" id="email" ng-model="user.email">'
+                +'</div>'
+                +'<div class="form-group">'
+                    +'<label for="password" class="fb-text-label" ng-required>Mot de passe</label>'
+                    +'<input type="password" class="form-control" name="password" id="password" ng-model="user.password">'
+                +'</div>'
+
+                +'<div class="form-group">'
+                    +'<label for="nom" class="fb-text-label" ng-required>Nom</label>'
+                    +'<input type="text" class="form-control" name="nom" id="nom" ng-model="user.firstName">'
+                +'</div>'
+                +'<div class="form-group">'
+                    +'<label for="prenom" class="fb-text-label" ng-required>Prénom</label>'
+                    +'<input type="text" class="form-control" name="prenom" id="prenom" ng-model="user.lastName">'
+                +'</div>'
+
+                +'<div class="form-group">'
+                    +'<label for="street" class="fb-text-label" ng-required>Rue</label>'
+                    +'<input type="text" class="form-control" name="street" id="street" ng-model="user.street">'
+                +'</div>'
+                +'<div class="form-group">'
+                    +'<label for="city" class="fb-text-label" ng-required>Ville</label>'
+                    +'<input type="text" class="form-control" name="city" id="city" ng-model="user.city">'
+                +'</div>'
+
+                +'<div class="form-group">'
+                    +'<label for="zipcode" class="fb-text-label" ng-required>Code postal</label>'
+                    +'<input type="text" class="form-control" name="zipCode" id="zipcode" ng-model="user.zipCode">'
+                +'</div>'
+                +'<div class="form-group">'
+                    +'<label for="pays" class="fb-text-label" ng-required>Pays</label>'
+                    +'<input type="text" class="form-control" name="pays" id="pays" ng-model="user.country">'
+                +'</div>'
+
+                +'<div class="form-group">'
+                    +'<label for="age" class="fb-text-label" ng-required>Age</label>'
+                    +'<input type="text" class="form-control" name="age" id="age" ng-model="user.age">'
+                +'</div>'
+
+                +'<div class="fb-radio-group form-group field-male">'
+                    +'<label for="male" class="fb-radio-group-label">Sexe</label>'
+                    +'<div class="radio-group" style="padding-left: 80px;">'
+                        +'<div class="radio">'
+                            +'<input name="male" id="male-0" value="masculin" type="radio" ng-model="user.sex">'
+                            +'<label for="male-0">masculin</label>'
+                        +'</div>'
+                        +'<div class="radio">'
+                            +'<input name="male" id="male-1" value="feminin" type="radio" ng-model="user.sex">'
+                            +'<label for="male-1">feminin</label>'
+                        +'</div>'
+                    +'</div>'
+                +'</div>'
+
+                +'<div class="fb-select form-group theme">'
+                    +'<label for="theme" class="fb-select-label">Select</label>'
+                    +'<select class="form-control" name="theme" id="theme" ng-model="user.theme" ng-required>'
+                        +'<option value="user-men" id="theme-1">homme : bleu (blue)</option>'
+                        +'<option value="user-women" id="theme-2">femme : rose (pink) </option>'
+                    +'</select>'
+                +'</div>'
+
+                    +'<button type="submit" class="btn btn-default">M\'inscrire</button>'
+                +'</div>'
+            +'</form>'
+        );
     });
 

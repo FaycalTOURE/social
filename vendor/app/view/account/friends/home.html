@@ -36,7 +36,7 @@
                     <a>
                         Nombre d'ami(e)s <span class="badge">{{ data.all.friends.list.length }}</span>
                     </a>
-                    <div class="media" ng-repeat="item in data.all.friends.list">
+                    <div class="media well well-sm" ng-repeat="item in data.all.friends.list">
                         <div class="media-left">
                             <a href="#">
                                 <img class="media-object" ng-src="{{item.admin.avatar.filename ? 'public/assets/user/' + item.admin.avatar.filename : 'http://identicon.org?t='+item.user.lastName+'&s=256' }}" alt="...">
@@ -86,16 +86,16 @@
 
             <aside class="recommandations basic-style col-md-4 separate-shadow">
                 <div class="title">
-                    Rechercher un ami
+                    Rechercher un message
                 </div>
                 <div class="aside-body" ng-controller="TypeaheadFriendsCtrl">
                     <div class="search">
                         <input type="text" ng-model="customPopupSelected" placeholder="Recherche par nom de famille" uib-typeahead="state as state.user.firstName for state in states" typeahead-popup-template-url="customPopupTemplate.html" class="form-control">
                     </div>
-                    <div class="media" ng-if="customPopupSelected">
+                    <div class="media well well-sm" ng-if="customPopupSelected">
                         <div class="media-left">
                             <a href="#">
-                                <span class="glyphicon glyphicon-pencil"></span>
+                                <img class="media-object" ng-src="{{customPopupSelected.admin.avatar.filename ? 'public/assets/user/' + customPopupSelected.admin.avatar.filename : 'http://identicon.org?t='+customPopupSelected.user.lastName+'&s=256' }}" alt="">
                             </a>
                         </div>
                         <div class="media-body">
@@ -105,10 +105,7 @@
                         <div class="action-container float-right">
                             <ul class="target-action">
                                 <li>
-                                    <a href="{{ customPopupSelected._id }}" class="btn btn-default delete"><span class="glyphicon glyphicon-trash"></span></a>
-                                </li>
-                                <li>
-                                    <a href="{{ customPopupSelected._id }}" class="btn btn-default share"><span class="glyphicon glyphicon-envelope"></span></a>
+                                    <a ng-click="deleteUser(customPopupSelected._id)" class="btn btn-danger white-color delete"><span class="glyphicon glyphicon-trash"></span></a>
                                 </li>
                                 <li>
                                     <a ui-sref="friend({id:customPopupSelected._id})" class="btn btn-default share">suivre <span class="glyphicon glyphicon-menu-right"></span></a>
@@ -119,8 +116,7 @@
                 </div>
             </aside>
         </div>
-
-        </div>
+    </div>
 </section>
 
 <ng-include src="'vendor/app/view/account/insigths/footer.html'"></ng-include>
