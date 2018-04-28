@@ -65,8 +65,8 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 
-app.post('/upload', upload.single('file'), function(req,res,next){
-    console.log('Uploade Successful file =>', req.file, 'body =>', req.body);
+app.post('/upload', upload.single('file'), function(req,res){
+    console.log('Uploade Successful file =>', req.file);
     // in db
     var collection = db.get().collection('user');
 
@@ -75,8 +75,8 @@ app.post('/upload', upload.single('file'), function(req,res,next){
         { _id : db.makeObjectId(id)},
         { $set: { 'admin.avatar' : req.file } }
     );
+    res.json({success : true, data : req.file});
 });
-
 
 // CONNECTION
 

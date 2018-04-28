@@ -2,13 +2,17 @@
 
 // Main ctrl
 
-app.controller('mainCtrl', function($scope, $rootScope, $uibModal, $log, $document, $window, $timeout, $q, $templateCache, $http){
+app.controller('mainCtrl', function($scope, $rootScope, $uibModal,
+                                    $log, $document, $window, $timeout,
+                                    $q, $templateCache, $http){
 
     $rootScope.userId = '';
 
     $rootScope.data = {
         all : null
     };
+
+    $rootScope.goUpload = false;
 
     var hydrate = function(one, two){
         var data = {};
