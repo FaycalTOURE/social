@@ -3,243 +3,179 @@ var app  = angular.module('app', [
     'ngAnimate',
     'ui.bootstrap',
     'ui.router',
-    'ui.router.stateHelper',
-    'ui.router.login',
     'ipCookie'
     ])
-    .config(function ($stateProvider, $urlRouterProvider, stateHelperProvider, $loginProvider) {
-    $stateProvider
-        .state('index', {
-            url : '/index',
-            templateUrl : './vendor/app/view/main.html',
-            controller : function ($scope, $location, $http, $rootScope, $timeout) {
+    .config(function ($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('index', {
+                url: '/index',
+                templateUrl: './vendor/app/view/main.html',
+                controller: function ($scope, $location, $http, $rootScope, $timeout) {
 
-                // Connexion
+                    // Connexion
 
-                $scope.connexion = function (condition, post) {
-                    if(condition && post.email !== null && post.password !== null){
-                        $scope.currentPost = angular.copy(post);
-                        var req = {
-                            method: 'POST',
-                            url: '/connexion',
-                            data: { client: $scope.currentPost }
-                        };
-                        $http(req).then(function(response) {
-                            var data = response.data;
-                            $timeout(function () {
-                                $rootScope.userId = data._id;
-                                $location.path("/profile");
-                            }, 300);
-                        });
-                    }
-                };
-
-            }
-        })
-        .state('account', {
-            url : '/account',
-            templateUrl : './vendor/app/view/account/main.html'
-        })
-        .state('profile', {
-            url : '/profile',
-            templateUrl : './vendor/app/view/account/profile/home.html',
-            controller : 'userCtrl'
-        })
-        .state('messages', {
-            url : '/messages',
-            templateUrl : './vendor/app/view/account/messages/home.html',
-            controller : function ($scope, $http, $rootScope, $location) {
-
-                // Return message infos
-
-                $scope.messageReceiveInfos = function (_id) {
-
-                    for(var index in $rootScope.data.all.friends.list){
-                        if($rootScope.data.all.friends.list[index]._id === _id){
-                            return $rootScope.data.all.friends.list[index];
+                    $scope.connexion = function (condition, post) {
+                        if (condition && post.email !== null && post.password !== null) {
+                            $scope.currentPost = angular.copy(post);
+                            var req = {
+                                method: 'POST',
+                                url: '/connexion',
+                                data: {client: $scope.currentPost}
+                            };
+                            $http(req).then(function (response) {
+                                var data = response.data;
+                                $timeout(function () {
+                                    $rootScope.userId = data._id;
+                                    $location.path("/profile");
+                                }, 300);
+                            });
                         }
-                    }
-                };
+                    };
 
-                // Delete Message
+                }
+            })
+            .state('account', {
+                url: '/account',
+                templateUrl: './vendor/app/view/account/main.html'
+            })
+            .state('profile', {
+                url: '/profile',
+                templateUrl: './vendor/app/view/account/profile/home.html',
+                controller: 'userCtrl'
+            })
+            .state('messages', {
+                url: '/messages',
+                templateUrl: './vendor/app/view/account/messages/home.html',
+                controller: function ($scope, $http, $rootScope, $location) {
 
-                $scope.deleteMessage = function (_id) {
-                    console.log(_id);
-                    $http
-                        .get('/user/message/delete/'+_id);
-                    $location.path('/profile');
-                };
-            }
-        })
-        .state('publications', {
-            url : '/publications',
-            templateUrl : './vendor/app/view/account/publications/home.html',
-            controller : function ($scope, $http, $rootScope, $location) {
-                $scope.deletePost = function (_id) {
-                    $http
-                        .get('/user/publish/delete/'+_id);
-                    $location.path('/profile');
-                };
-            }
-        })
-        .state('wall', {
-            url : '/wall',
-            templateUrl : './vendor/app/view/account/wall/home.html'
-        })
-        .state('super-user', {
-            url : '/super-user',
-            templateUrl : './vendor/app/view/account/super-user-home.html'
-        })
-        .state('friends', {
-            url : '/friends',
-            templateUrl : './vendor/app/view/account/friends/home.html',
-            controller : function ($scope, $http, $rootScope, $location) {
-                $scope.deleteUser = function (_id) {
-                    $http
-                        .get('/user/'+ $rootScope.userId +'/friends/delete/'+_id);
-                    $location.path('/profile');
-                };
-            }
-        })
-        .state('friend', {
-            url : '/friend/{id}',
-            templateUrl : './vendor/app/view/account/profile/friend.html',
-            controller : function ($stateParams, $rootScope, $scope, $timeout, $http) {
-                $scope.userId = $stateParams.id;
+                    // Return message infos
 
-                $scope.user = {
-                    loadData : function(){
-                        var r_api = arguments[0];
-                        return $http.get(r_api);
-                    },
-                    user : function(){
-                        var loadUser = function(){
-                            $scope.user.loadData.apply(null, ['/user/' + $scope.userId])
-                                .then(function(response){
-                                    console.log('user', response);
-                                    $scope.data.all = response.data[0];
-                                    $rootScope.data.all = response.data[0];
-                                    console.log($scope.data.all, $scope.data.all, $scope.data.all);
-                                    $scope.avatar = $scope.data.all.hasOwnProperty('admin') ? 'public/assets/user/' + $rootScope.data.all.admin.avatar.filename : 'http://identicon.org?t='+$rootScope.data.all.user.lastName +'&s=256';
-                                });
-                        };
-                        $timeout(loadUser, 0);
-                        return this;
-                    },
-                    publish : function(){
-                        var loadPublish = function(){
-                            $scope.user.loadData.apply(null, ['/user/publish/' + $scope.userId])
-                                .then(function(response){
-                                    console.log('publish', response);
-                                    for(var i = 0; i < response.data.length; i++){
-                                        $scope.data.all.publications.list.push(response.data[i]);
-                                    }
-                                });
-                        };
-                        $timeout(loadPublish, 100);
-                        return this;
-                    },
-                    recommandation : function(){
-                        var loadRecommandation = function(){
-                            $scope.user.loadData.apply(null, ['/user/recommandation/' + $scope.userId])
-                                .then(function(response){
-                                    var data = response.data;
+                    $scope.messageReceiveInfos = function (_id) {
 
-                                    data.forEach(function (result) {
-                                        var logs = result.recommandation.logs;
-                                        var from = logs.from;
-                                        var recommanded = logs.recommanded;
+                        for (var index in $rootScope.data.all.friends.list) {
+                            if ($rootScope.data.all.friends.list[index]._id === _id) {
+                                return $rootScope.data.all.friends.list[index];
+                            }
+                        }
+                    };
 
-                                        $http.get('/user/' + from)
-                                            .then(function (success) {
-                                                result.recommandation.logs.from = success.data[0].user.firstName;
-                                                result.recommandation.logs.fromId = success.data[0]._id;
-                                            });
+                    // Delete Message
 
-                                        $http.get('/user/' + recommanded)
-                                            .then(function (success) {
-                                                result.recommandation.logs.recommanded = success.data[0].user.firstName;
-                                                result.recommandation.logs.recommandedId = success.data[0]._id;
-                                            });
+                    $scope.deleteMessage = function (_id) {
+                        console.log(_id);
+                        $http
+                            .get('/user/message/delete/' + _id);
+                        $location.path('/profile');
+                    };
+                }
+            })
+            .state('publications', {
+                url: '/publications',
+                templateUrl: './vendor/app/view/account/publications/home.html',
+                controller: function ($scope, $http, $rootScope, $location) {
+                    $scope.deletePost = function (_id) {
+                        $http
+                            .get('/user/publish/delete/' + _id);
+                        $location.path('/profile');
+                    };
+                }
+            })
+            .state('wall', {
+                url: '/wall',
+                templateUrl: './vendor/app/view/account/wall/home.html'
+            })
+            .state('super-user', {
+                url: '/super-user',
+                templateUrl: './vendor/app/view/account/super-user-home.html'
+            })
+            .state('friends', {
+                url: '/friends',
+                templateUrl: './vendor/app/view/account/friends/home.html',
+                controller: function ($scope, $http, $rootScope, $location) {
+                    $scope.deleteUser = function (_id) {
+                        $http
+                            .get('/user/' + $rootScope.userId + '/friends/delete/' + _id);
+                        $location.path('/profile');
+                    };
+                }
+            })
+            .state('friend', {
+                url: '/friend/{id}',
+                templateUrl: './vendor/app/view/account/profile/friend.html',
+                controller: function ($stateParams, $rootScope, $scope, $timeout, $http) {
+                    $scope.userId = $stateParams.id;
 
-                                        $scope.data.all.friends.recommandations.push(result);
+                    $scope.user = {
+                        loadData: function () {
+                            var r_api = arguments[0];
+                            return $http.get(r_api);
+                        },
+                        user: function () {
+                            var loadUser = function () {
+                                $scope.user.loadData.apply(null, ['/user/' + $scope.userId])
+                                    .then(function (response) {
+                                        console.log('user', response);
+                                        $scope.data.all = response.data[0];
+                                        $rootScope.data.all = response.data[0];
+                                        console.log($scope.data.all, $scope.data.all, $scope.data.all);
+                                        $scope.avatar = $scope.data.all.hasOwnProperty('admin') ? 'public/assets/user/' + $rootScope.data.all.admin.avatar.filename : 'http://identicon.org?t=' + $rootScope.data.all.user.lastName + '&s=256';
                                     });
-                                });
-                        };
-                        $timeout(loadRecommandation, 200);
-                        return this;
-                    }
-                };
+                            };
+                            $timeout(loadUser, 0);
+                            return this;
+                        },
+                        publish: function () {
+                            var loadPublish = function () {
+                                $scope.user.loadData.apply(null, ['/user/publish/' + $scope.userId])
+                                    .then(function (response) {
+                                        console.log('publish', response);
+                                        for (var i = 0; i < response.data.length; i++) {
+                                            $scope.data.all.publications.list.push(response.data[i]);
+                                        }
+                                    });
+                            };
+                            $timeout(loadPublish, 100);
+                            return this;
+                        },
+                        recommandation: function () {
+                            var loadRecommandation = function () {
+                                $scope.user.loadData.apply(null, ['/user/recommandation/' + $scope.userId])
+                                    .then(function (response) {
+                                        var data = response.data;
 
-                $scope.user.user().publish().recommandation();
-            }
-        });
+                                        data.forEach(function (result) {
+                                            var logs = result.recommandation.logs;
+                                            var from = logs.from;
+                                            var recommanded = logs.recommanded;
 
-    // stateHelperProvider
-    //     .state({
-    //         name: "public",
-    //         url: "/",
-    //         abstract: true,
-    //         children: [{
-    //             name: "login",
-    //             abstract: true,
-    //             children: [{
-    //                 name: "connexion",
-    //                 url: "/login",
-    //                 views: {
-    //                     "content@": {
-    //                         template: "login",
-    //                         controllerAs: "vm"
-    //                     }
-    //                 },
-    //                 children: [{
-    //                     name: "process",
-    //                     url: "/process",
-    //                     views: {
-    //                         "content@": {
-    //                             template: "hello",
-    //                             controller: function ($authentication, $login) {
-    //                                 $authentication.setAuthKey("key");
-    //                                 $login.getLoginRedirect();
-    //                             }
-    //                         }
-    //                     }
-    //                 }]
-    //             }]
-    //         }, {
-    //             name: "private",
-    //             abstract: true,
-    //             data: {
-    //                 requireLogin: true
-    //             },
-    //             children: [{
-    //                 name: "home",
-    //                 url: "/vendor/app/view/account/main",
-    //                 data: {
-    //                     saveState: false
-    //                 },
-    //                 views: {
-    //                     "content@": {
-    //                         controller: function ($login) {
-    //                             return $login.logout(true);
-    //                         }
-    //                     }
-    //                 }
-    //             }]
-    //         }]
-    //     });
+                                            $http.get('/user/' + from)
+                                                .then(function (success) {
+                                                    result.recommandation.logs.from = success.data[0].user.firstName;
+                                                    result.recommandation.logs.fromId = success.data[0]._id;
+                                                });
 
-    $loginProvider
-        .setDefaultLoggedInState ("public")
-        .setFallbackState("login")
-        .setAuthModule("$authentication")
-        .setAuthClearMethod("clearAuthKey")
-        .setAuthGetMethod("getAuthKey")
-        .setCookieName("__loginState");
+                                            $http.get('/user/' + recommanded)
+                                                .then(function (success) {
+                                                    result.recommandation.logs.recommanded = success.data[0].user.firstName;
+                                                    result.recommandation.logs.recommandedId = success.data[0]._id;
+                                                });
 
-    $urlRouterProvider
-        .otherwise('/')
-        .when('', '/');
+                                            $scope.data.all.friends.recommandations.push(result);
+                                        });
+                                    });
+                            };
+                            $timeout(loadRecommandation, 200);
+                            return this;
+                        }
+                    };
+
+                    $scope.user.user().publish().recommandation();
+                }
+            });
+
+        $urlRouterProvider
+            .otherwise('/index')
+            .when('', '/');
     })
     .run(function($templateCache) {
         $templateCache.
@@ -424,4 +360,3 @@ var app  = angular.module('app', [
             +'</form>'
         );
     });
-

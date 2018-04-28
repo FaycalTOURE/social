@@ -23,9 +23,11 @@
                     </div>
                 </div>
             </div>
-            <div ng-controller = "uploadCtrl">
-                <input type = "file" file-model = "myFile" accept="image/*" ng-max-size="2MB"/>
+            <a ng-click="goUpload = !goUpload"><i class="fa fa-info"></i></a>
+            <div ng-controller = "uploadCtrl" ng-class="{'ng-hide' : !goUpload}">
+                <input type="file" name="file" file-model= "myFile" accept="image/*" ng-max-size="5MB"/>
                 <button ng-click = "uploadFile()" class="btn btn-default">Upload File</button>
+                <progress value="{{ progressvalue }}" max="{{ progressmax }}"></progress>
             </div>
         </div>
 

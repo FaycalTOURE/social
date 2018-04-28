@@ -76,21 +76,29 @@ app.service('fileUpload', ['$http', '$window', '$rootScope', function ($http, $w
         fd.append('file', file, fid);
         $http.post(uploadUrl, fd, {
             transformRequest: angular.identity,
-            headers: {'Content-Type': undefined}
-        }).then(function (resp) {
-            if(resp.data.error_code === 0){
-                $window.alert('Success ' + resp.config.data.file.name + 'uploaded. Response: ');
-            } else {
-                $window.alert('an error occured');
+            headers: { 'Content-Type': undefined },
+            eventHandlers: {
+                readystatechange: function(event) {
+                    if(event.currentTarget.readyState === 4) {
+                        $window.location.reload();
+                        console.log("readyState=4: Server has finished extra work!");
+                    }
+                }
+            },
+            uploadEventHandlers: {
+                progress: function(e) {
+                    if (e.lengthComputable) {
+                        $rootScope.progress = Math.round(e.loaded * 100 / e.total);
+                        $rootScope.progressmax = Math.round(e.total);
+                        $rootScope.progressvalue = Math.round(e.loaded);
+                        console.log("progress: " + $rootScope.progress + "%");
+                        if (e.loaded == e.total) {
+                            console.log("File upload finished!");
+                            $rootScope.goUpload = !$rootScope.goUpload;
+                        }
+                    }
+                }
             }
-        }, function (resp) {
-            console.log('Error status: ' + resp.status);
-            $window.alert('Error status: ' + resp.status);
-        }, function (evt) {
-            console.log(evt);
-            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
-            vm.progress = 'progress: ' + progressPercentage + '% ';
-        });
+        }).then(function () {});
     }
 }]);
