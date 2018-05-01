@@ -120,6 +120,24 @@ section{
         }
       }
     }
+    input[type="file"]{
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+    }
+    .input-file{
+      font-weight: bold;
+      display: inline-block;
+      padding: 6px 45px;
+      vertical-align: middle;
+      background: #39D2B4;
+      color: #fff;
+      font-size: 1em;
+      transition: all .4s;
+      cursor: pointer;
+      margin-bottom: 0;
+    }
   }
   .profile-body{
     background: #fff;
