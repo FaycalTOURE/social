@@ -3,7 +3,7 @@
 | Etapes        | Tâche           |  
 | ------------- |:-------------:| 
 | 1      | installation de fichiers de dépendences | 
-| 2      | gulp sass pour mettre fihciers styles à jour  
+| 2      | gulp sass pour mettre fichiers styles à jour  
 | 3      | mise en route de MongoDB|  
 | 4      | Enjoy !  
 
